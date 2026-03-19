@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cinema Proposal Builder | Habitech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Karla:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<style>
+  :root {
+    /* ── Habitech Brand Colours ── */
+    --deep-midnight:  #231F20;
+    --signal-wave:    #428CAF;
+    --data-stream:    #78B6E4;
+    --soft-glacier:   #E4ECED;
+    --pale-blue:      #BADAF3;
+    --sidebar-dark:   #3A4C60;
+    --mid-blue-grey:  #445868;
+
+    /* ── Semantic Aliases ── */
+    --accent:       var(--signal-wave);
+    --accent-text:  #ffffff;
+    --bg:           #f0f2f4;
+    --card:         #ffffff;
+    --border:       #CCCCCC;
+    --text:         var(--deep-midnight);
+    --muted:        var(--mid-blue-grey);
+    --brand-color:  var(--deep-midnight);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Karla', Calibri, Arial, sans-serif; background: var(--bg); color: var(--text); height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--deep-midnight);
+    color: #fff;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    height: 64px;
+    flex-shrink: 0;
+    border-bottom: 3px solid var(--signal-wave);
+  }
+  .header-logo { height: 28px; width: auto; display: block; }
+  .header-divider { width: 1px; height: 28px; background: rgba(255,255,255,0.2); }
+  .header-subtitle { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.6); letter-spacing: 1.5px; text-transform: uppercase; }
+  .brand-tabs { display: flex; gap: 6px; margin-left: auto; }
+  .brand-tab {
+    padding: 6px 18px;
+    border-radius: 3px;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    background: transparent;
+    color: rgba(255,255,255,0.65);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
+  }
+  .brand-tab:hover { border-color: var(--signal-wave); color: #fff; }
+  .brand-tab.active { background: var(--signal-wave); border-color: var(--signal-wave); color: #fff; font-weight: 700; }
+  .slide-count-badge {
+    background: rgba(66,140,175,0.25);
+    border: 1px solid rgba(66,140,175,0.4);
+    border-radius: 3px;
+    padding: 3px 10px;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: var(--data-stream);
+    margin-left: 8px;
+  }
+
+  /* ── LAYOUT ── */
+  .app-body { display: flex; flex: 1; overflow: hidden; }
+
+  /* ── LEFT PANEL ── */
+  .left-panel {
+    width: 400px;
+    min-width: 320px;
+    background: var(--card);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .search-area {
+    padding: 14px 16px 10px;
+    border-bottom: 1px solid var(--border);
+    background: #fafafa;
+  }
+  .search-box {
+    width: 100%;
+    padding: 9px 12px 9px 36px;
+    border: 1.5px solid var(--border);
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: 'Karla', sans-serif;
+    background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23445868' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.099zm-5.242 1.656a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z'/%3E%3C/svg%3E") no-repeat 10px center;
+    outline: none;
+    transition: border-color 0.2s;
+    color: var(--deep-midnight);
+  }
+  .search-box:focus { border-color: var(--signal-wave); box-shadow: 0 0 0 3px rgba(66,140,175,0.15); }
+
+  .cat-filters { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+  .cat-btn {
+    padding: 4px 10px;
+    border-radius: 3px;
+    border: 1.5px solid var(--border);
+    background: transparent;
+    font-size: 11px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: all 0.15s;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .cat-btn:hover { border-color: var(--signal-wave); color: var(--signal-wave); }
+  .cat-btn.active { background: var(--signal-wave); border-color: var(--signal-wave); color: #fff; font-weight: 700; }
+
+  .structural-area {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border);
+    background: var(--soft-glacier);
+  }
+  .structural-title { font-size: 10px; font-weight: 700; font-family: 'Montserrat', sans-serif; color: var(--mid-blue-grey); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .structural-checks { display: flex; flex-wrap: wrap; gap: 6px; }
+  .struct-check { display: flex; align-items: center; gap: 5px; font-size: 12px; cursor: pointer; color: var(--deep-midnight); }
+  .struct-check input { accent-color: var(--signal-wave); cursor: pointer; }
+  .struct-group-label { width: 100%; font-size: 10px; font-weight: 700; font-family: 'Montserrat', sans-serif; color: var(--signal-wave); text-transform: uppercase; letter-spacing: 0.8px; margin-top: 8px; margin-bottom: 2px; padding-top: 8px; border-top: 1px solid var(--border); }
+
+  .product-list { flex: 1; overflow-y: auto; padding: 8px; }
+  .product-list::-webkit-scrollbar { width: 5px; }
+  .product-list::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
+
+  .no-brand-msg {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    height: 100%; color: var(--muted); text-align: center; gap: 8px; padding: 24px;
+  }
+  .no-brand-msg svg { opacity: 0.3; }
+  .no-brand-msg p { font-size: 14px; }
+
+  .section-header {
+    font-size: 10px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--signal-wave);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    padding: 12px 8px 4px;
+    border-top: 1px solid var(--border);
+    margin-top: 4px;
+  }
+  .section-header:first-child { border-top: none; margin-top: 0; }
+  .product-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.12s;
+    border: 1.5px solid transparent;
+    margin-bottom: 2px;
+  }
+  .product-card:hover { background: var(--soft-glacier); }
+  .product-card.selected { background: rgba(66,140,175,0.08); border-color: var(--signal-wave); }
+  .product-card input[type=checkbox] { accent-color: var(--signal-wave); width: 16px; height: 16px; cursor: pointer; flex-shrink: 0; }
+  .product-thumb {
+    width: 56px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 2px;
+    border: 1px solid var(--border);
+    flex-shrink: 0;
+    background: var(--soft-glacier);
+  }
+  .product-info { flex: 1; min-width: 0; }
+  .product-model { font-size: 13px; font-weight: 700; font-family: 'Montserrat', sans-serif; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--deep-midnight); }
+  .product-subcat { font-size: 11px; color: var(--signal-wave); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; }
+  .product-desc { font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 1px; }
+  .slide-count-pill {
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    background: var(--soft-glacier);
+    border-radius: 3px;
+    padding: 2px 7px;
+    color: var(--mid-blue-grey);
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+  }
+  .product-card.selected .slide-count-pill { background: var(--signal-wave); color: #fff; border-color: var(--signal-wave); }
+
+  /* ── RIGHT PANEL ── */
+  .right-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .proposal-header {
+    padding: 12px 20px;
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .proposal-header h2 { font-size: 14px; font-weight: 700; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.8px; color: var(--deep-midnight); }
+  .proposal-header .slide-tally { font-size: 13px; color: var(--muted); }
+  .btn {
+    padding: 9px 20px;
+    border-radius: 3px;
+    border: none;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .btn-primary { background: var(--signal-wave); color: #fff; margin-left: auto; }
+  .btn-primary:hover { background: #3a7d9e; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(66,140,175,0.35); }
+  .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; transform: none; box-shadow: none; }
+  .btn-secondary { background: var(--soft-glacier); color: var(--mid-blue-grey); border: 1px solid var(--border); }
+  .btn-secondary:hover { background: #d4dfe0; }
+
+  .proposal-scroll { flex: 1; overflow-y: auto; padding: 16px 20px; }
+  .proposal-scroll::-webkit-scrollbar { width: 5px; }
+  .proposal-scroll::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
+
+  .empty-proposal {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    height: 100%; color: var(--muted); text-align: center; gap: 10px;
+  }
+  .empty-proposal p { font-size: 14px; }
+  .empty-proposal .hint { font-size: 12px; }
+
+  .proposal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+  .proposal-slide {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid var(--border);
+    background: #f3f4f6;
+    aspect-ratio: 16/9;
+    cursor: grab;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .proposal-slide:hover { border-color: var(--signal-wave); box-shadow: 0 4px 14px rgba(66,140,175,0.2); }
+  .proposal-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .slide-label {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.72));
+    color: #fff;
+    font-size: 10px;
+    padding: 12px 6px 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .slide-remove {
+    position: absolute;
+    top: 4px; right: 4px;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.55);
+    color: #fff;
+    border: none;
+    font-size: 13px;
+    line-height: 1;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.12s;
+  }
+  .proposal-slide:hover .slide-remove { display: flex; }
+  .slide-remove:hover { background: #ef4444; }
+  .slide-seq {
+    position: absolute;
+    top: 4px; left: 4px;
+    background: rgba(0,0,0,0.55);
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    border-radius: 3px;
+    padding: 1px 4px;
+  }
+
+  /* ── LOADING OVERLAY ── */
+  #loading-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    gap: 16px;
+  }
+  #loading-overlay.show { display: flex; }
+  .spinner {
+    width: 44px; height: 44px;
+    border: 4px solid rgba(255,255,255,0.2);
+    border-top-color: var(--signal-wave);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  #loading-msg { font-size: 14px; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="main-header">
+  <img src="assets/habitech-logo-light.svg" alt="Habitech" class="header-logo">
+  <div class="header-divider"></div>
+  <span class="header-subtitle">Cinema Proposal Builder</span>
+  <div class="brand-tabs">
+    <button class="brand-tab" data-brand="M&K"     onclick="selectBrand('M&K')">M&amp;K Sound</button>
+    <button class="brand-tab" data-brand="Sonance"  onclick="selectBrand('Sonance')">Sonance</button>
+    <button class="brand-tab" data-brand="Wisdom"   onclick="selectBrand('Wisdom')">Wisdom Audio</button>
+  </div>
+  <span class="slide-count-badge" id="selected-count">0 slides</span>
+</header>
+
+<!-- BODY -->
+<div class="app-body">
+
+  <!-- LEFT: Product picker -->
+  <div class="left-panel">
+    <div class="search-area">
+      <input class="search-box" type="text" id="search-input" placeholder="Search model or description…" oninput="renderProducts()">
+      <div class="cat-filters" id="cat-filters"></div>
+    </div>
+    <div class="structural-area" id="structural-area" style="display:none">
+      <div class="structural-title">Include in every proposal</div>
+      <div class="structural-checks" id="structural-checks"></div>
+    </div>
+    <div class="product-list" id="product-list">
+      <div class="no-brand-msg">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        <p>Select a brand above to begin</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Proposal preview -->
+  <div class="right-panel">
+    <div class="proposal-header">
+      <h2>Proposal Preview</h2>
+      <span class="slide-tally" id="slide-tally">No slides selected</span>
+      <button class="btn btn-secondary" onclick="clearProposal()">Clear</button>
+      <button class="btn btn-primary" id="export-btn" onclick="exportPDF()" disabled>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Export PDF
+      </button>
+    </div>
+    <div class="proposal-scroll">
+      <div id="proposal-empty" class="empty-proposal">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        <p>Your proposal is empty</p>
+        <span class="hint">Select a brand, then tick products from the left panel</span>
+      </div>
+      <div class="proposal-grid" id="proposal-grid" style="display:none"></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- LOADING OVERLAY -->
+<div id="loading-overlay">
+  <div class="spinner"></div>
+  <div id="loading-msg">Building PDF…</div>
+</div>
+
+<script>
+// ─── STATE ───────────────────────────────────────────────────────────────────
+let DATA         = null;   // loaded products.json
+let activeBrand  = null;   // "M&K" | "Sonance" | "Wisdom"
+let activeCat    = "All";  // category filter
+let selectedProductIds = new Set(); // product ids the BDM has ticked
+let structuralState = {};  // { cover: true, intro: true, ... }
+let proposalSlides = [];   // ordered list of {path, label} for the preview
+
+const BRAND_PREFIXES = { "M&K": "mk", "Sonance": "sonance", "Wisdom": "wisdom" };
+
+// ─── BOOT ────────────────────────────────────────────────────────────────────
+async function init() {
+  try {
+    const r = await fetch("data/products.json");
+    DATA = await r.json();
+  } catch(e) {
+    alert("Could not load products.json — make sure the data/ folder is present.");
+  }
+}
+init();
+
+// ─── BRAND SELECTION ─────────────────────────────────────────────────────────
+function selectBrand(brand) {
+  activeBrand = brand;
+  activeCat   = "All";
+  selectedProductIds.clear();
+  document.getElementById("search-input").value = "";
+  document.querySelectorAll(".brand-tab").forEach(t => t.classList.toggle("active", t.dataset.brand === brand));
+
+  // Build default structural state — all pre-selected per spec
+  const prefix  = BRAND_PREFIXES[brand];
+  const struct  = DATA?.structural?.[prefix] || {};
+  structuralState = {
+    cover:                true,
+    intro:                true,   // pre-selected
+    audioTech:            true,   // pre-selected
+    acousticTreatment:    true,   // pre-selected
+    projectionTech:       true,   // pre-selected (Projection Technology slide)
+    projectionAspectRatios: true, // pre-selected (Projection Aspect Ratios slide)
+    projectionSurfaces:   true,   // pre-selected
+    seating:              true,   // pre-selected
+  };
+  // Each closing page individually pre-selected
+  (struct.closing || []).forEach((_, i) => { structuralState[`closing_${i}`] = true; });
+
+  renderStructural();
+  renderCatFilters();
+  renderProducts();
+  rebuildProposal();
+}
+
+// ─── STRUCTURAL SLIDES ───────────────────────────────────────────────────────
+// Order here defines display order in the checkbox panel
+const STRUCTURAL_LABELS = {
+  cover:                  "Cover Slide",
+  intro:                  "Introduction",
+  audioTech:              "Audio Technology",
+  acousticTreatment:      "Acoustic Treatment",
+  projectionTech:         "Projection Technology",
+  projectionAspectRatios: "Projection Aspect Ratios",
+  projectionSurfaces:     "Projection Surfaces",
+  seating:                "Seating",
+};
+
+function renderStructural() {
+  const area = document.getElementById("structural-area");
+  if (!activeBrand) { area.style.display = "none"; return; }
+  area.style.display = "block";
+  const prefix = BRAND_PREFIXES[activeBrand];
+  const struct  = DATA?.structural?.[prefix] || {};
+
+  // Standard structural items
+  let html = Object.entries(STRUCTURAL_LABELS).map(([key, label]) => {
+    // projectionTech exists if struct.projectionTech[0] exists
+    // projectionAspectRatios exists if struct.projectionTech[1] exists
+    if (key === "projectionTech"         && !(struct.projectionTech?.[0])) return "";
+    if (key === "projectionAspectRatios" && !(struct.projectionTech?.[1])) return "";
+    if (key !== "projectionTech" && key !== "projectionAspectRatios" && !struct[key]) return "";
+    const checked = structuralState[key] ? "checked" : "";
+    return `<label class="struct-check">
+      <input type="checkbox" ${checked} onchange="toggleStructural('${key}', this.checked)"> ${label}
+    </label>`;
+  }).join("");
+
+  // Individual closing pages — each with its real title, all pre-selected
+  const closingSlides = struct.closing || [];
+  if (closingSlides.length) {
+    html += `<div class="struct-group-label">Closing Pages</div>`;
+    closingSlides.forEach((slide, i) => {
+      const checked = structuralState[`closing_${i}`] ? "checked" : "";
+      html += `<label class="struct-check">
+        <input type="checkbox" ${checked} onchange="toggleStructural('closing_${i}', this.checked)"> ${slide.title}
+      </label>`;
+    });
+  }
+
+  document.getElementById("structural-checks").innerHTML = html;
+}
+
+function toggleStructural(key, val) {
+  structuralState[key] = val;
+  rebuildProposal();
+}
+
+// ─── CATEGORY FILTERS ────────────────────────────────────────────────────────
+function renderCatFilters() {
+  if (!DATA || !activeBrand) return;
+  const brandProds = DATA.products.filter(p => p.brand === activeBrand);
+  const cats = ["All", ...new Set(brandProds.map(p => p.category))];
+  document.getElementById("cat-filters").innerHTML = cats.map(c =>
+    `<button class="cat-btn ${c === activeCat ? "active" : ""}" onclick="setCat('${c}')">${c}</button>`
+  ).join("");
+}
+
+function setCat(cat) {
+  activeCat = cat;
+  renderCatFilters();
+  renderProducts();
+}
+
+// ─── PRODUCT LIST ─────────────────────────────────────────────────────────────
+function renderProducts() {
+  const el = document.getElementById("product-list");
+  if (!activeBrand || !DATA) {
+    el.innerHTML = `<div class="no-brand-msg"><p>Select a brand above to begin</p></div>`;
+    return;
+  }
+  const q = document.getElementById("search-input").value.trim().toLowerCase();
+  let prods = DATA.products.filter(p => p.brand === activeBrand);
+  if (activeCat !== "All") prods = prods.filter(p => p.category === activeCat);
+  if (q) prods = prods.filter(p =>
+    p.model.toLowerCase().includes(q) ||
+    p.description.toLowerCase().includes(q) ||
+    (p.subcategory||"").toLowerCase().includes(q) ||
+    (p.manufacturer||"").toLowerCase().includes(q)
+  );
+
+  if (!prods.length) {
+    el.innerHTML = `<div class="no-brand-msg"><p>No products match your search</p></div>`;
+    return;
+  }
+
+  // Group by category
+  const groups = {};
+  prods.forEach(p => { (groups[p.category] = groups[p.category] || []).push(p); });
+
+  let html = "";
+  for (const [cat, list] of Object.entries(groups)) {
+    html += `<div class="section-header">${cat}</div>`;
+    list.forEach(prod => {
+      const sel     = selectedProductIds.has(prod.id);
+      const thumb   = prod.slides[0] || "";
+      const nSlides = prod.slides.length;
+      html += `<div class="product-card ${sel ? "selected" : ""}" data-pid="${prod.id}" onclick="toggleProduct(this.dataset.pid)">
+        <input type="checkbox" ${sel ? "checked" : ""} onclick="event.stopPropagation(); toggleProduct(this.closest('.product-card').dataset.pid)">
+        <img class="product-thumb" src="${thumb}" alt="${prod.model}" loading="lazy" onerror="this.style.visibility='hidden'">
+        <div class="product-info">
+          <div class="product-model">${prod.model}</div>
+          <div class="product-subcat">${prod.subcategory || prod.category}</div>
+          <div class="product-desc">${prod.description}</div>
+        </div>
+        <span class="slide-count-pill">${nSlides} slide${nSlides>1?"s":""}</span>
+      </div>`;
+    });
+  }
+  el.innerHTML = html;
+}
+
+// ─── TOGGLE PRODUCT ──────────────────────────────────────────────────────────
+function toggleProduct(id) {
+  selectedProductIds.has(id) ? selectedProductIds.delete(id) : selectedProductIds.add(id);
+  renderProducts();
+  rebuildProposal();
+}
+
+// ─── REBUILD PROPOSAL — STRICT PAGE ORDER ────────────────────────────────────
+// Order is ALWAYS:
+//  Cover → Intro → Audio Tech → Acoustic Treatment →
+//  Speakers → Subwoofers →
+//  [Amp header] → Amplification →
+//  Video Processors →
+//  [Proj header] → Projection Technology → Projection Aspect Ratios → Projectors →
+//  [Screen header] → Projection Surfaces → Screens →
+//  Seating → [Closing pages individually]
+// TV is never included (not selectable).
+function rebuildProposal() {
+  if (!activeBrand || !DATA) { proposalSlides = []; renderProposal(); return; }
+
+  const prefix = BRAND_PREFIXES[activeBrand];
+  const struct  = DATA.structural?.[prefix] || {};
+  const slides  = [];
+
+  // ── Helpers ──────────────────────────────────────────────────────────────
+  const push = (path, label) => slides.push({ path, label });
+
+  const pushGroup = (key) =>
+    (struct[key] || []).forEach(s => push(s.path, s.title || key));
+
+  const pushStructSlide = (key, index) => {
+    const s = (struct[key] || [])[index];
+    if (s) push(s.path, s.title);
+  };
+
+  const hasSelected = (cat) =>
+    DATA.products.some(p => p.brand === activeBrand && p.category === cat && selectedProductIds.has(p.id));
+
+  const addProducts = (cat) =>
+    DATA.products
+      .filter(p => p.brand === activeBrand && p.category === cat && selectedProductIds.has(p.id))
+      .forEach(prod => prod.slides.forEach(s => push(s, prod.model)));
+
+  const pushSectionHeader = (key) => {
+    const h = struct.sectionHeaders?.[key];
+    if (h) push(h.path, "");
+  };
+
+  // ── 1. Cover ─────────────────────────────────────────────────────────────
+  if (structuralState.cover) pushGroup("cover");
+
+  // ── 2. Introduction (always first, before everything else) ───────────────
+  if (structuralState.intro) pushGroup("intro");
+
+  // ── 3. Audio Technology (always immediately after Introduction) ──────────
+  if (structuralState.audioTech) pushGroup("audioTech");
+
+  // ── 4. Acoustic Treatment (always after Audio Tech, before Speakers) ─────
+  if (structuralState.acousticTreatment) pushGroup("acousticTreatment");
+
+  // ── 5. Speakers ──────────────────────────────────────────────────────────
+  addProducts("Speakers");
+
+  // ── 6. Subwoofers ────────────────────────────────────────────────────────
+  addProducts("Subwoofers");
+
+  // ── 7. Amplification ─────────────────────────────────────────────────────
+  if (hasSelected("Amplification")) {
+    addProducts("Amplification");
+  }
+
+  // ── 8. Video Processors ──────────────────────────────────────────────────
+  addProducts("Video Processors");
+
+  // ── 9. Projectors — strict inner order:
+  //        Projection Technology → Projection Aspect Ratios → Products
+  if (hasSelected("Projectors")) {
+    // Projection Technology always before Projection Aspect Ratios
+    if (structuralState.projectionTech)         pushStructSlide("projectionTech", 0);
+    // Projection Aspect Ratios always before any projector products
+    if (structuralState.projectionAspectRatios) pushStructSlide("projectionTech", 1);
+    addProducts("Projectors");
+  }
+
+  // ── 10. TV ───────────────────────────────────────────────────────────────
+  if (hasSelected("TV")) {
+    addProducts("TV");
+  }
+
+  // ── 11. Projection Screens — Projection Surfaces always before products ──
+  if (hasSelected("Projection Screens")) {
+    if (structuralState.projectionSurfaces) pushGroup("projectionSurfaces");
+    addProducts("Projection Screens");
+  }
+
+  // ── 12. Seating ──────────────────────────────────────────────────────────
+  if (structuralState.seating) pushGroup("seating");
+
+  // ── 13. Closing pages — each individually, in deck order ─────────────────
+  (struct.closing || []).forEach((slide, i) => {
+    if (structuralState[`closing_${i}`]) push(slide.path, slide.title);
+  });
+
+  proposalSlides = slides;
+  renderProposal();
+}
+
+// ─── RENDER PROPOSAL PREVIEW ─────────────────────────────────────────────────
+function renderProposal() {
+  const grid    = document.getElementById("proposal-grid");
+  const empty   = document.getElementById("proposal-empty");
+  const tally   = document.getElementById("slide-tally");
+  const exportBtn = document.getElementById("export-btn");
+  const badge   = document.getElementById("selected-count");
+
+  badge.textContent = proposalSlides.length + " slides";
+
+  if (!proposalSlides.length) {
+    grid.style.display  = "none";
+    empty.style.display = "flex";
+    tally.textContent   = "No slides selected";
+    exportBtn.disabled  = true;
+    return;
+  }
+
+  grid.style.display  = "grid";
+  empty.style.display = "none";
+  tally.textContent   = proposalSlides.length + " slides in proposal";
+  exportBtn.disabled  = false;
+
+  grid.innerHTML = proposalSlides.map((s, i) => `
+    <div class="proposal-slide" draggable="true"
+         ondragstart="dragStart(event,${i})" ondragover="dragOver(event)" ondrop="drop(event,${i})">
+      <img src="${s.path}" alt="${s.label}" loading="lazy" onerror="this.style.visibility='hidden'">
+      <span class="slide-seq">${i+1}</span>
+      <div class="slide-label">${s.label}</div>
+      <button class="slide-remove" onclick="removeSlide(${i})" title="Remove slide">✕</button>
+    </div>
+  `).join("");
+}
+
+// ─── DRAG TO REORDER ─────────────────────────────────────────────────────────
+let dragIdx = null;
+function dragStart(e, i) { dragIdx = i; e.dataTransfer.effectAllowed = "move"; }
+function dragOver(e) { e.preventDefault(); e.dataTransfer.dropEffect = "move"; }
+function drop(e, i) {
+  e.preventDefault();
+  if (dragIdx === null || dragIdx === i) return;
+  const moved = proposalSlides.splice(dragIdx, 1)[0];
+  proposalSlides.splice(i, 0, moved);
+  dragIdx = null;
+  renderProposal();
+}
+
+function removeSlide(i) {
+  proposalSlides.splice(i, 1);
+  renderProposal();
+}
+
+function clearProposal() {
+  selectedProductIds.clear();
+  if (activeBrand) {
+    // Re-select brand to reset structural defaults properly
+    selectBrand(activeBrand);
+  } else {
+    rebuildProposal();
+  }
+}
+
+// ─── IMAGE COMPRESSION (PNG → JPEG via canvas) ───────────────────────────────
+// Max width 1440px, JPEG quality 0.82 → keeps file well under 13 MB
+// while preserving crisp text and sharp slide visuals.
+const PDF_MAX_WIDTH  = 1440;
+const PDF_JPEG_QUAL  = 0.82;
+
+function compressSlideImage(url) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.onload = () => {
+      let w = img.naturalWidth;
+      let h = img.naturalHeight;
+      // Scale down if wider than max
+      if (w > PDF_MAX_WIDTH) {
+        h = Math.round(h * PDF_MAX_WIDTH / w);
+        w = PDF_MAX_WIDTH;
+      }
+      const canvas = document.createElement("canvas");
+      canvas.width  = w;
+      canvas.height = h;
+      canvas.getContext("2d").drawImage(img, 0, 0, w, h);
+      canvas.toBlob(
+        (blob) => blob ? blob.arrayBuffer().then(buf => resolve({ buf, w, h })) : resolve(null),
+        "image/jpeg",
+        PDF_JPEG_QUAL
+      );
+    };
+    img.onerror = () => resolve(null);
+    img.src = url;
+  });
+}
+
+// ─── EXPORT PDF ───────────────────────────────────────────────────────────────
+async function exportPDF() {
+  if (!proposalSlides.length) return;
+
+  const overlay = document.getElementById("loading-overlay");
+  const msg     = document.getElementById("loading-msg");
+  overlay.classList.add("show");
+
+  try {
+    const { PDFDocument } = PDFLib;
+    const pdfDoc = await PDFDocument.create();
+
+    for (let i = 0; i < proposalSlides.length; i++) {
+      const slide = proposalSlides[i];
+      msg.textContent = `Compressing slide ${i + 1} of ${proposalSlides.length}…`;
+
+      const result = await compressSlideImage(slide.path);
+      if (!result) continue;
+
+      const { buf, w, h } = result;
+      const img  = await pdfDoc.embedJpg(buf);
+      const page = pdfDoc.addPage([w, h]);
+      page.drawImage(img, { x: 0, y: 0, width: w, height: h });
+    }
+
+    msg.textContent = "Saving PDF…";
+    const pdfBytes  = await pdfDoc.save();
+    const blob      = new Blob([pdfBytes], { type: "application/pdf" });
+    const url       = URL.createObjectURL(blob);
+    const a         = document.createElement("a");
+    const brandSlug = (activeBrand || "Proposal").replace(/[^a-zA-Z0-9]/g, "_");
+    a.href          = url;
+    a.download      = `Cinema_Proposal_${brandSlug}_${yyyymmdd()}.pdf`;
+    a.click();
+    URL.revokeObjectURL(url);
+  } catch (err) {
+    alert("PDF export failed: " + err.message);
+    console.error(err);
+  } finally {
+    overlay.classList.remove("show");
+  }
+}
+
+function yyyymmdd() {
+  const d = new Date();
+  return d.getFullYear() + String(d.getMonth()+1).padStart(2,"0") + String(d.getDate()).padStart(2,"0");
+}
+</script>
+</body>
+</html>

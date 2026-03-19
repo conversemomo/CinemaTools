@@ -1,0 +1,3638 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-03-19",
+  "brands": [
+    "M&K",
+    "Sonance",
+    "Wisdom"
+  ],
+  "categories": [
+    "Speakers",
+    "Subwoofers",
+    "Amplification",
+    "Video Processors",
+    "Projectors",
+    "TV",
+    "Projection Screens"
+  ],
+  "structural": {
+    "mk": {
+      "cover": [
+        {
+          "slideNumber": 1,
+          "path": "slides/mk/Slide1.png",
+          "title": "Cover"
+        }
+      ],
+      "intro": [
+        {
+          "slideNumber": 2,
+          "path": "slides/mk/Slide2.png",
+          "title": "Introduction"
+        },
+        {
+          "slideNumber": 3,
+          "path": "slides/mk/Slide3.png",
+          "title": "About This Cinema Design"
+        }
+      ],
+      "audioTech": [
+        {
+          "slideNumber": 4,
+          "path": "slides/mk/Slide4.png",
+          "title": "Audio Technology"
+        }
+      ],
+      "acousticTreatment": [
+        {
+          "slideNumber": 5,
+          "path": "slides/mk/Slide5.png",
+          "title": "Acoustic Treatment"
+        },
+        {
+          "slideNumber": 6,
+          "path": "slides/mk/Slide6.png",
+          "title": "Acoustic Treatment"
+        },
+        {
+          "slideNumber": 7,
+          "path": "slides/mk/Slide7.png",
+          "title": "Acoustic Treatment"
+        }
+      ],
+      "sectionHeaders": {
+        "amplification": {
+          "slideNumber": 46,
+          "path": "slides/mk/Slide46.png"
+        },
+        "projector": {
+          "slideNumber": 71,
+          "path": "slides/mk/Slide71.png"
+        },
+        "tv": {
+          "slideNumber": 93,
+          "path": "slides/mk/Slide93.png"
+        },
+        "screen": {
+          "slideNumber": 95,
+          "path": "slides/mk/Slide95.png"
+        }
+      },
+      "projectionTech": [
+        {
+          "slideNumber": 72,
+          "path": "slides/mk/Slide72.png",
+          "title": "Projection Technology"
+        },
+        {
+          "slideNumber": 73,
+          "path": "slides/mk/Slide73.png",
+          "title": "Projection Aspect Ratios"
+        }
+      ],
+      "projectionSurfaces": [
+        {
+          "slideNumber": 96,
+          "path": "slides/mk/Slide96.png",
+          "title": "Projection Surfaces"
+        }
+      ],
+      "seating": [
+        {
+          "slideNumber": 111,
+          "path": "slides/mk/Slide111.png",
+          "title": "Seating"
+        }
+      ],
+      "closing": [
+        {
+          "slideNumber": 112,
+          "path": "slides/mk/Slide112.png",
+          "title": "Habitech Cinema Design"
+        },
+        {
+          "slideNumber": 113,
+          "path": "slides/mk/Slide113.png",
+          "title": "Our Design Process"
+        },
+        {
+          "slideNumber": 114,
+          "path": "slides/mk/Slide114.png",
+          "title": "Cinema Design Drawings"
+        },
+        {
+          "slideNumber": 115,
+          "path": "slides/mk/Slide115.png",
+          "title": "Unparalleled Expertise"
+        },
+        {
+          "slideNumber": 116,
+          "path": "slides/mk/Slide116.png",
+          "title": "The Experience"
+        }
+      ]
+    },
+    "sonance": {
+      "cover": [
+        {
+          "slideNumber": 1,
+          "path": "slides/sonance/Slide1.png",
+          "title": "Cover"
+        }
+      ],
+      "intro": [
+        {
+          "slideNumber": 2,
+          "path": "slides/sonance/Slide2.png",
+          "title": "Introduction"
+        },
+        {
+          "slideNumber": 3,
+          "path": "slides/sonance/Slide3.png",
+          "title": "About This Cinema Design"
+        }
+      ],
+      "audioTech": [
+        {
+          "slideNumber": 4,
+          "path": "slides/sonance/Slide4.png",
+          "title": "Audio Technology"
+        }
+      ],
+      "acousticTreatment": [
+        {
+          "slideNumber": 5,
+          "path": "slides/sonance/Slide5.png",
+          "title": "Acoustic Treatment"
+        },
+        {
+          "slideNumber": 6,
+          "path": "slides/sonance/Slide6.png",
+          "title": "Acoustic Treatment"
+        },
+        {
+          "slideNumber": 7,
+          "path": "slides/sonance/Slide7.png",
+          "title": "Acoustic Treatment"
+        }
+      ],
+      "sectionHeaders": {
+        "amplification": {
+          "slideNumber": 39,
+          "path": "slides/sonance/Slide39.png"
+        },
+        "projector": {
+          "slideNumber": 68,
+          "path": "slides/sonance/Slide68.png"
+        },
+        "tv": {
+          "slideNumber": 88,
+          "path": "slides/sonance/Slide88.png"
+        },
+        "screen": {
+          "slideNumber": 90,
+          "path": "slides/sonance/Slide90.png"
+        }
+      },
+      "projectionTech": [
+        {
+          "slideNumber": 69,
+          "path": "slides/sonance/Slide69.png",
+          "title": "Projection Technology"
+        },
+        {
+          "slideNumber": 70,
+          "path": "slides/sonance/Slide70.png",
+          "title": "Projection Aspect Ratios"
+        }
+      ],
+      "projectionSurfaces": [
+        {
+          "slideNumber": 91,
+          "path": "slides/sonance/Slide91.png",
+          "title": "Projection Surfaces"
+        }
+      ],
+      "seating": [
+        {
+          "slideNumber": 106,
+          "path": "slides/sonance/Slide106.png",
+          "title": "Seating"
+        }
+      ],
+      "closing": [
+        {
+          "slideNumber": 107,
+          "path": "slides/sonance/Slide107.png",
+          "title": "Habitech Cinema Design"
+        },
+        {
+          "slideNumber": 108,
+          "path": "slides/sonance/Slide108.png",
+          "title": "Our Design Process"
+        },
+        {
+          "slideNumber": 109,
+          "path": "slides/sonance/Slide109.png",
+          "title": "Cinema Design Drawings"
+        },
+        {
+          "slideNumber": 110,
+          "path": "slides/sonance/Slide110.png",
+          "title": "Unparalleled Expertise"
+        },
+        {
+          "slideNumber": 111,
+          "path": "slides/sonance/Slide111.png",
+          "title": "The Experience"
+        }
+      ]
+    },
+    "wisdom": {
+      "cover": [
+        {
+          "slideNumber": 1,
+          "path": "slides/wisdom/Slide1.png",
+          "title": "Cover"
+        }
+      ],
+      "intro": [
+        {
+          "slideNumber": 2,
+          "path": "slides/wisdom/Slide2.png",
+          "title": "Introduction"
+        },
+        {
+          "slideNumber": 3,
+          "path": "slides/wisdom/Slide3.png",
+          "title": "About This Cinema Design"
+        }
+      ],
+      "audioTech": [
+        {
+          "slideNumber": 4,
+          "path": "slides/wisdom/Slide4.png",
+          "title": "Audio Technology"
+        }
+      ],
+      "acousticTreatment": [
+        {
+          "slideNumber": 5,
+          "path": "slides/wisdom/Slide5.png",
+          "title": "Acoustic Treatment"
+        },
+        {
+          "slideNumber": 6,
+          "path": "slides/wisdom/Slide6.png",
+          "title": "Acoustic Treatment"
+        },
+        {
+          "slideNumber": 7,
+          "path": "slides/wisdom/Slide7.png",
+          "title": "Acoustic Treatment"
+        }
+      ],
+      "sectionHeaders": {
+        "amplification": {
+          "slideNumber": 29,
+          "path": "slides/wisdom/Slide29.png"
+        },
+        "projector": {
+          "slideNumber": 58,
+          "path": "slides/wisdom/Slide58.png"
+        },
+        "tv": {
+          "slideNumber": 79,
+          "path": "slides/wisdom/Slide79.png"
+        },
+        "screen": {
+          "slideNumber": 81,
+          "path": "slides/wisdom/Slide81.png"
+        }
+      },
+      "projectionTech": [
+        {
+          "slideNumber": 59,
+          "path": "slides/wisdom/Slide59.png",
+          "title": "Projection Technology"
+        },
+        {
+          "slideNumber": 60,
+          "path": "slides/wisdom/Slide60.png",
+          "title": "Projection Aspect Ratios"
+        }
+      ],
+      "projectionSurfaces": [
+        {
+          "slideNumber": 82,
+          "path": "slides/wisdom/Slide82.png",
+          "title": "Projection Surfaces"
+        }
+      ],
+      "seating": [
+        {
+          "slideNumber": 97,
+          "path": "slides/wisdom/Slide97.png",
+          "title": "Seating"
+        }
+      ],
+      "closing": [
+        {
+          "slideNumber": 98,
+          "path": "slides/wisdom/Slide98.png",
+          "title": "Habitech Cinema Design"
+        },
+        {
+          "slideNumber": 99,
+          "path": "slides/wisdom/Slide99.png",
+          "title": "Our Design Process"
+        },
+        {
+          "slideNumber": 100,
+          "path": "slides/wisdom/Slide100.png",
+          "title": "Cinema Design Drawings"
+        },
+        {
+          "slideNumber": 101,
+          "path": "slides/wisdom/Slide101.png",
+          "title": "Unparalleled Expertise"
+        },
+        {
+          "slideNumber": 102,
+          "path": "slides/wisdom/Slide102.png",
+          "title": "The Experience"
+        }
+      ]
+    }
+  },
+  "products": [
+    {
+      "id": "mk-lcr750c",
+      "brand": "M&K",
+      "model": "LCR750C",
+      "category": "Speakers",
+      "subcategory": "Front Speakers",
+      "description": "THX Select certified, 2\u00d75.25\" woofers, rooms up to 56.63m\u00b3",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide8.png"
+      ]
+    },
+    {
+      "id": "mk-ic95",
+      "brand": "M&K",
+      "model": "IC95",
+      "category": "Speakers",
+      "subcategory": "Atmos Speakers",
+      "description": "In-ceiling speaker, proven 6.5\" mid woofer",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide9.png"
+      ]
+    },
+    {
+      "id": "mk-m50",
+      "brand": "M&K",
+      "model": "M50",
+      "category": "Speakers",
+      "subcategory": "Front / Surround / Atmos",
+      "description": "D\u00e9cor friendly on wall, ultra slim low profile",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide10.png"
+      ]
+    },
+    {
+      "id": "mk-d85",
+      "brand": "M&K",
+      "model": "D85",
+      "category": "Speakers",
+      "subcategory": "Front / Surround / Atmos",
+      "description": "Compact enclosure, subtly elegant, phase focused crossover",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide11.png"
+      ]
+    },
+    {
+      "id": "mk-d95",
+      "brand": "M&K",
+      "model": "D95",
+      "category": "Speakers",
+      "subcategory": "Front / Surround / Atmos",
+      "description": "Compact enclosure, subtly elegant, phase focused crossover",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide12.png"
+      ]
+    },
+    {
+      "id": "mk-mp950",
+      "brand": "M&K",
+      "model": "MP950",
+      "category": "Speakers",
+      "subcategory": "Front / Surround / Atmos",
+      "description": "On wall speaker, contemporary visual appeal",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide13.png"
+      ]
+    },
+    {
+      "id": "mk-mp150",
+      "brand": "M&K",
+      "model": "MP150",
+      "category": "Speakers",
+      "subcategory": "Front / Surround / Atmos",
+      "description": "On wall speaker, new Danish designed high performance tweeters",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide14.png"
+      ]
+    },
+    {
+      "id": "mk-mp300",
+      "brand": "M&K",
+      "model": "MP300",
+      "category": "Speakers",
+      "subcategory": "Front / Surround / Atmos",
+      "description": "On wall speaker, designed and built in Denmark",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide15.png"
+      ]
+    },
+    {
+      "id": "mk-iw5",
+      "brand": "M&K",
+      "model": "IW5",
+      "category": "Speakers",
+      "subcategory": "Front / Surround / Atmos",
+      "description": "Compact on wall or in ceiling, round white paintable grille",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide16.png"
+      ]
+    },
+    {
+      "id": "mk-iw85",
+      "brand": "M&K",
+      "model": "IW85",
+      "category": "Speakers",
+      "subcategory": "Front / Surround / Atmos",
+      "description": "In wall speaker, timber matched",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide17.png"
+      ]
+    },
+    {
+      "id": "mk-iw95",
+      "brand": "M&K",
+      "model": "IW95",
+      "category": "Speakers",
+      "subcategory": "Front / Surround / Atmos",
+      "description": "In wall ceiling speaker, timber matched",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide18.png"
+      ]
+    },
+    {
+      "id": "mk-iw950",
+      "brand": "M&K",
+      "model": "IW950",
+      "category": "Speakers",
+      "subcategory": "Front / Surround / Atmos",
+      "description": "In wall speaker, timber matched",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide19.png"
+      ]
+    },
+    {
+      "id": "mk-iw150",
+      "brand": "M&K",
+      "model": "IW150",
+      "category": "Speakers",
+      "subcategory": "Front / Surround / Atmos",
+      "description": "In wall speaker, identical drivers to satellite series",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide20.png"
+      ]
+    },
+    {
+      "id": "mk-iw150a",
+      "brand": "M&K",
+      "model": "IW150A",
+      "category": "Speakers",
+      "subcategory": "Front / Surround / Atmos",
+      "description": "In wall/ceiling speaker, Dolby Atmos friendly",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide21.png"
+      ]
+    },
+    {
+      "id": "mk-iw300",
+      "brand": "M&K",
+      "model": "IW300",
+      "category": "Speakers",
+      "subcategory": "Front / Surround / Atmos",
+      "description": "In wall/ceiling speaker, identical drivers to original",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide22.png"
+      ]
+    },
+    {
+      "id": "mk-iw500",
+      "brand": "M&K",
+      "model": "IW500",
+      "category": "Speakers",
+      "subcategory": "Front / Surround / Atmos",
+      "description": "THX Certified Dominus, precise on and off axis performance",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide23.png"
+      ]
+    },
+    {
+      "id": "mk-m70",
+      "brand": "M&K",
+      "model": "M70",
+      "category": "Speakers",
+      "subcategory": "Front / Surround Speakers",
+      "description": "Ultra slim low profile on wall speaker",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide24.png"
+      ]
+    },
+    {
+      "id": "mk-m90",
+      "brand": "M&K",
+      "model": "M90",
+      "category": "Speakers",
+      "subcategory": "Front / Surround Speakers",
+      "description": "Ultra slim low profile on wall speaker",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide25.png"
+      ]
+    },
+    {
+      "id": "mk-lcr750",
+      "brand": "M&K",
+      "model": "LCR750",
+      "category": "Speakers",
+      "subcategory": "Front / Surround Speakers",
+      "description": "Bookshelf/on wall, THX Select certified medium rooms",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide26.png"
+      ]
+    },
+    {
+      "id": "mk-lcr950",
+      "brand": "M&K",
+      "model": "LCR950",
+      "category": "Speakers",
+      "subcategory": "Front / Surround Speakers",
+      "description": "Bookshelf/on wall, THX Select 2 certified medium rooms",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide27.png"
+      ]
+    },
+    {
+      "id": "mk-s150",
+      "brand": "M&K",
+      "model": "S150",
+      "category": "Speakers",
+      "subcategory": "Front / Surround Speakers",
+      "description": "Bookshelf/on wall, THX Ultra2 certified larger rooms",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide28.png"
+      ]
+    },
+    {
+      "id": "mk-s300",
+      "brand": "M&K",
+      "model": "S300",
+      "category": "Speakers",
+      "subcategory": "Front / Surround Speakers",
+      "description": "Bookshelf/on wall, THX Ultra2 certified up to 84.95m\u00b3",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide29.png"
+      ]
+    },
+    {
+      "id": "mk-mps2520p",
+      "brand": "M&K",
+      "model": "MPS2520P",
+      "category": "Speakers",
+      "subcategory": "Front / Surround Speakers",
+      "description": "Bookshelf/on wall, powered version of S150",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide30.png"
+      ]
+    },
+    {
+      "id": "mk-mps1620p",
+      "brand": "M&K",
+      "model": "MPS1620P",
+      "category": "Speakers",
+      "subcategory": "Front / Surround Speakers",
+      "description": "Bookshelf/on wall, powered studio monitor",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide31.png"
+      ]
+    },
+    {
+      "id": "mk-m40t",
+      "brand": "M&K",
+      "model": "M40T",
+      "category": "Speakers",
+      "subcategory": "Surround / Atmos Speakers",
+      "description": "Tripole\u00ae bookshelf/on wall speaker",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide32.png"
+      ]
+    },
+    {
+      "id": "mk-sur55t",
+      "brand": "M&K",
+      "model": "SUR55T",
+      "category": "Speakers",
+      "subcategory": "Surround / Atmos Speakers",
+      "description": "Tripole\u00ae bookshelf/on wall, THX Select certified",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide33.png"
+      ]
+    },
+    {
+      "id": "mk-s150t",
+      "brand": "M&K",
+      "model": "S150T",
+      "category": "Speakers",
+      "subcategory": "Surround / Atmos Speakers",
+      "description": "Tripole\u00ae bookshelf/on wall, THX Ultra2 certified",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide34.png"
+      ]
+    },
+    {
+      "id": "mk-s300t",
+      "brand": "M&K",
+      "model": "S300T",
+      "category": "Speakers",
+      "subcategory": "Surround / Atmos Speakers",
+      "description": "Tripole\u00ae bookshelf/on wall, THX Ultra2 certified larger rooms",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide35.png"
+      ]
+    },
+    {
+      "id": "mk-iw150t",
+      "brand": "M&K",
+      "model": "IW150T",
+      "category": "Speakers",
+      "subcategory": "Surround / Atmos Speakers",
+      "description": "Tripole\u00ae in wall, equivalent of famous S150T",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide36.png"
+      ]
+    },
+    {
+      "id": "mk-iw28s",
+      "brand": "M&K",
+      "model": "IW28S",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "In wall subwoofer, specially tuned ultra fast mass loaded dual drivers",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide37.png"
+      ]
+    },
+    {
+      "id": "mk-v10plus",
+      "brand": "M&K",
+      "model": "V10+",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "Compact active subwoofer, precision Class D amplifier",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide38.png"
+      ]
+    },
+    {
+      "id": "mk-v12plus",
+      "brand": "M&K",
+      "model": "V12+",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "Compact active subwoofer, THX Select certified up to 56.63m\u00b3",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide39.png"
+      ]
+    },
+    {
+      "id": "mk-v15plus",
+      "brand": "M&K",
+      "model": "V15+",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "Compact active subwoofer, THX Ultra certified up to 84.95m\u00b3",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide40.png"
+      ]
+    },
+    {
+      "id": "mk-x10plus",
+      "brand": "M&K",
+      "model": "X10+",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "Active subwoofer, THX Ultra certified up to 84.95m\u00b3",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide41.png"
+      ]
+    },
+    {
+      "id": "mk-x12plus",
+      "brand": "M&K",
+      "model": "X12+",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "Active subwoofer, THX Ultra certified up to 84.95m\u00b3",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide42.png"
+      ]
+    },
+    {
+      "id": "mk-v15plus-thx-dominus",
+      "brand": "M&K",
+      "model": "V15+ THX Dominus",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "Active subwoofer, THX Dominus certified up to 184.06m\u00b3",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide43.png"
+      ]
+    },
+    {
+      "id": "mk-movie-51-system",
+      "brand": "M&K",
+      "model": "Movie 5.1 System",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "Compact 5.1 surround sound set: K50 + K40T + subwoofer",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide44.png"
+      ]
+    },
+    {
+      "id": "mk-c15s---va500",
+      "brand": "M&K",
+      "model": "C15S / VA500",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "Custom install subwoofer with VA500 Blue edition amplifier",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide45.png"
+      ]
+    },
+    {
+      "id": "mk-bmc-1",
+      "brand": "M&K",
+      "model": "BMC-1",
+      "category": "Amplification",
+      "subcategory": "M&K Amplification",
+      "description": "Balanced line level studio bass management controller",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide47.png"
+      ]
+    },
+    {
+      "id": "mk-va500",
+      "brand": "M&K",
+      "model": "VA500",
+      "category": "Amplification",
+      "subcategory": "M&K Amplification",
+      "description": "Class D subwoofer amplifier, high efficiency cool running",
+      "manufacturer": "M&K Sound",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide48.png"
+      ]
+    },
+    {
+      "id": "sonance-vx62",
+      "brand": "Sonance",
+      "model": "VX62",
+      "category": "Speakers",
+      "subcategory": "LCR / Surround Speakers",
+      "description": "VX Series, superior performance, finish and installation",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide8.png"
+      ]
+    },
+    {
+      "id": "sonance-vx62-alt",
+      "brand": "Sonance",
+      "model": "VX62 (Alt)",
+      "category": "Speakers",
+      "subcategory": "LCR / Surround Speakers",
+      "description": "VX Series, superior performance, elegant finish",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide9.png"
+      ]
+    },
+    {
+      "id": "sonance-vx66",
+      "brand": "Sonance",
+      "model": "VX66",
+      "category": "Speakers",
+      "subcategory": "LCR / Surround Speakers",
+      "description": "VX Series, superior performance, finish and installation",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide10.png"
+      ]
+    },
+    {
+      "id": "sonance-vx62-lcr",
+      "brand": "Sonance",
+      "model": "VX62 LCR",
+      "category": "Speakers",
+      "subcategory": "LCR / Surround Speakers",
+      "description": "VX Series, superior performance, elegant finish as LCR",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide11.png"
+      ]
+    },
+    {
+      "id": "sonance-vx66-lcr",
+      "brand": "Sonance",
+      "model": "VX66 LCR",
+      "category": "Speakers",
+      "subcategory": "LCR / Surround Speakers",
+      "description": "VX Series, superior performance, elegant finish as LCR",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide12.png"
+      ]
+    },
+    {
+      "id": "sonance-vx62r",
+      "brand": "Sonance",
+      "model": "VX62R",
+      "category": "Speakers",
+      "subcategory": "Atmos Speakers",
+      "description": "VX Series in-ceiling, superior performance elegant finish",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide13.png"
+      ]
+    },
+    {
+      "id": "sonance-vx66r",
+      "brand": "Sonance",
+      "model": "VX66R",
+      "category": "Speakers",
+      "subcategory": "Atmos Speakers",
+      "description": "VX Series in-ceiling, superior performance elegant finish",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide14.png"
+      ]
+    },
+    {
+      "id": "sonance-vxq68r",
+      "brand": "Sonance",
+      "model": "VXQ68R",
+      "category": "Speakers",
+      "subcategory": "Atmos Speakers",
+      "description": "VXQ flagship range, elegant modern style, in-ceiling",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide15.png"
+      ]
+    },
+    {
+      "id": "sonance-vx86r",
+      "brand": "Sonance",
+      "model": "VX86R",
+      "category": "Speakers",
+      "subcategory": "Atmos Speakers",
+      "description": "VX Series in-ceiling, superior performance elegant finish",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide16.png"
+      ]
+    },
+    {
+      "id": "sonance-vxq88r",
+      "brand": "Sonance",
+      "model": "VXQ88R",
+      "category": "Speakers",
+      "subcategory": "Atmos Speakers",
+      "description": "VXQ flagship range, elegant modern style, in-ceiling",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide17.png"
+      ]
+    },
+    {
+      "id": "sonance-is6",
+      "brand": "Sonance",
+      "model": "IS6",
+      "category": "Speakers",
+      "subcategory": "Surround Speakers",
+      "description": "Motion Flex Technology, invisible speaker engineering",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide18.png"
+      ]
+    },
+    {
+      "id": "sonance-is8",
+      "brand": "Sonance",
+      "model": "IS8",
+      "category": "Speakers",
+      "subcategory": "LCR / Surround Speakers",
+      "description": "Motion Flex Technology, advancements in invisible engineering",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide19.png"
+      ]
+    },
+    {
+      "id": "sonance-is10",
+      "brand": "Sonance",
+      "model": "IS10",
+      "category": "Speakers",
+      "subcategory": "LCR / Surround Speakers",
+      "description": "Motion Flex Technology, invisible speaker engineering suite",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide20.png"
+      ]
+    },
+    {
+      "id": "sonance-reference-r1",
+      "brand": "Sonance",
+      "model": "Reference R1",
+      "category": "Speakers",
+      "subcategory": "LCR / Surround Speakers",
+      "description": "4th gen, brings out the best in TV, movies, gaming, concerts",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide21.png"
+      ]
+    },
+    {
+      "id": "sonance-reference-r1-sur",
+      "brand": "Sonance",
+      "model": "Reference R1 SUR",
+      "category": "Speakers",
+      "subcategory": "Surround Speakers",
+      "description": "4th gen surround, best in movies, gaming and concerts",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide22.png"
+      ]
+    },
+    {
+      "id": "sonance-reference-r2",
+      "brand": "Sonance",
+      "model": "Reference R2",
+      "category": "Speakers",
+      "subcategory": "LCR / Surround Speakers",
+      "description": "4th gen, brings out the best in TV, movies, gaming, concerts",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide23.png"
+      ]
+    },
+    {
+      "id": "sonance-reference-r2-sur",
+      "brand": "Sonance",
+      "model": "Reference R2 SUR",
+      "category": "Speakers",
+      "subcategory": "Surround Speakers",
+      "description": "Matte finish, optimised low diffraction, surround version",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide24.png"
+      ]
+    },
+    {
+      "id": "sonance-reference-r1c",
+      "brand": "Sonance",
+      "model": "Reference R1C",
+      "category": "Speakers",
+      "subcategory": "Atmos Speakers",
+      "description": "Consistent design with Visual Performance, matte finish",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide25.png"
+      ]
+    },
+    {
+      "id": "sonance-s10i-10in",
+      "brand": "Sonance",
+      "model": "S10i 10\"",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "Powerful bass in a minimalist compact design, minimal footprint",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide26.png"
+      ]
+    },
+    {
+      "id": "sonance-impact-8",
+      "brand": "Sonance",
+      "model": "Impact 8",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "8\" ultra long throw woofer, exceptional bass performance",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide27.png"
+      ]
+    },
+    {
+      "id": "sonance-impact-10",
+      "brand": "Sonance",
+      "model": "Impact 10",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "Cabinet subwoofer, Impact series",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide28.png"
+      ]
+    },
+    {
+      "id": "sonance-impact-12",
+      "brand": "Sonance",
+      "model": "Impact 12",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "Cabinet subwoofer, Impact series",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide29.png"
+      ]
+    },
+    {
+      "id": "sonance-is10w",
+      "brand": "Sonance",
+      "model": "IS10W",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "Motion Flex Technology in wall subwoofer",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide30.png"
+      ]
+    },
+    {
+      "id": "sonance-is10-2w",
+      "brand": "Sonance",
+      "model": "IS10-2W",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "Motion Flex Technology dual in wall subwoofer",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide31.png"
+      ]
+    },
+    {
+      "id": "sonance-is15w",
+      "brand": "Sonance",
+      "model": "IS15W",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "Motion Flex Technology advancements, in wall subwoofer",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide32.png"
+      ]
+    },
+    {
+      "id": "sonance-r10",
+      "brand": "Sonance",
+      "model": "R10",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "In wall sub, for construction or renovation, enclosed design",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide33.png"
+      ]
+    },
+    {
+      "id": "sonance-r12-a",
+      "brand": "Sonance",
+      "model": "R12 (A)",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "In wall sub kit, 12 inch",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide34.png"
+      ]
+    },
+    {
+      "id": "sonance-r12-b",
+      "brand": "Sonance",
+      "model": "R12 (B)",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "In wall sub kit, 12 inch alternate configuration",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide35.png"
+      ]
+    },
+    {
+      "id": "sonance-vp-sub-10in",
+      "brand": "Sonance",
+      "model": "VP SUB 10\"",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "Retro fit in wall sub, aesthetic consistent with Visual Performance series",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide36.png"
+      ]
+    },
+    {
+      "id": "sonance-12in-powerpipe",
+      "brand": "Sonance",
+      "model": "12\" Powerpipe",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "Fills space with rich bass without interfering with d\u00e9cor",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide37.png"
+      ]
+    },
+    {
+      "id": "sonance-12in-emb-cabinet",
+      "brand": "Sonance",
+      "model": "12\" EMB Cabinet",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "Perfect hidden base solution when there is no space for PowerPipe",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide38.png"
+      ]
+    },
+    {
+      "id": "sonance-dsp2-150-mkiii",
+      "brand": "Sonance",
+      "model": "DSP2-150 MKIII",
+      "category": "Amplification",
+      "subcategory": "Sonance Amplification",
+      "description": "High resolution audio ready, Class D amplification, 2 channel",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide40.png"
+      ]
+    },
+    {
+      "id": "sonance-dsp-2-750-mkii",
+      "brand": "Sonance",
+      "model": "DSP 2-750 MKII",
+      "category": "Amplification",
+      "subcategory": "Sonance Amplification",
+      "description": "High resolution audio ready, Class D amplification, 2 channel high power",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide41.png"
+      ]
+    },
+    {
+      "id": "sonance-dsp-8-130-mkiii",
+      "brand": "Sonance",
+      "model": "DSP 8-130 MKIII",
+      "category": "Amplification",
+      "subcategory": "Sonance Amplification",
+      "description": "Audiophile grade Class D amplification, 8 channel, rated at 8\u03a9 and 4\u03a9",
+      "manufacturer": "Sonance",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide42.png"
+      ]
+    },
+    {
+      "id": "wisdom-ics7a",
+      "brand": "Wisdom",
+      "model": "ICS7a",
+      "category": "Speakers",
+      "subcategory": "In Ceiling Speakers",
+      "description": "In-ceiling, highly detailed and dynamic, Planar Magnetic driver",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide8.png"
+      ]
+    },
+    {
+      "id": "wisdom-ici6",
+      "brand": "Wisdom",
+      "model": "ICI6",
+      "category": "Speakers",
+      "subcategory": "In Ceiling Speakers",
+      "description": "In-ceiling, highly detailed and dynamic, Planar Magnetic driver",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide9.png"
+      ]
+    },
+    {
+      "id": "wisdom-p7m",
+      "brand": "Wisdom",
+      "model": "P7M",
+      "category": "Speakers",
+      "subcategory": "LCR Speakers",
+      "description": "All metal construction, custom lengths from 1433mm minimum",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide10.png"
+      ]
+    },
+    {
+      "id": "wisdom-p9m",
+      "brand": "Wisdom",
+      "model": "P9M",
+      "category": "Speakers",
+      "subcategory": "LCR Speakers",
+      "description": "All metal construction, custom lengths from 1433mm minimum",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide11.png"
+      ]
+    },
+    {
+      "id": "wisdom-p2m",
+      "brand": "Wisdom",
+      "model": "P2M",
+      "category": "Speakers",
+      "subcategory": "LCR / Surround Speakers",
+      "description": "On wall design, black or white high gloss finish",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide12.png"
+      ]
+    },
+    {
+      "id": "wisdom-p4m",
+      "brand": "Wisdom",
+      "model": "P4M",
+      "category": "Speakers",
+      "subcategory": "LCR / Surround Speakers",
+      "description": "On wall design, black or white high gloss finish",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide13.png"
+      ]
+    },
+    {
+      "id": "wisdom-p2i",
+      "brand": "Wisdom",
+      "model": "P2i",
+      "category": "Speakers",
+      "subcategory": "LCR / Surround Speakers",
+      "description": "In wall/ceiling, highly detailed, Planar Magnetic driver",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide14.png"
+      ]
+    },
+    {
+      "id": "wisdom-p4i",
+      "brand": "Wisdom",
+      "model": "P4i",
+      "category": "Speakers",
+      "subcategory": "LCR / Surround Speakers",
+      "description": "In wall/ceiling, highly detailed, Planar Magnetic driver",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide15.png"
+      ]
+    },
+    {
+      "id": "wisdom-p6i",
+      "brand": "Wisdom",
+      "model": "P6i",
+      "category": "Speakers",
+      "subcategory": "LCR / Surround Speakers",
+      "description": "In wall speaker, highly detailed, Planar Magnetic driver",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide16.png"
+      ]
+    },
+    {
+      "id": "wisdom-l8i",
+      "brand": "Wisdom",
+      "model": "L8i",
+      "category": "Speakers",
+      "subcategory": "LCR / Surround Speakers",
+      "description": "In wall speaker, highly detailed, Planar Magnetic driver",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide17.png"
+      ]
+    },
+    {
+      "id": "wisdom-sage-line-2-and-3",
+      "brand": "Wisdom",
+      "model": "Sage Line 2 & 3",
+      "category": "Speakers",
+      "subcategory": "LCR / Surround Speakers",
+      "description": "In baffle or on wall, Line Source technology, Planar Magnetic",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide18.png"
+      ]
+    },
+    {
+      "id": "wisdom-sage-point-2-v2",
+      "brand": "Wisdom",
+      "model": "Sage Point 2 V2",
+      "category": "Speakers",
+      "subcategory": "LCR / Surround Speakers",
+      "description": "On wall/in wall/ceiling, MTM Planar Magnetic driver",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide19.png"
+      ]
+    },
+    {
+      "id": "wisdom-sage-point-3-gt",
+      "brand": "Wisdom",
+      "model": "Sage Point 3 GT",
+      "category": "Speakers",
+      "subcategory": "LCR / Surround Speakers",
+      "description": "On wall/in wall/ceiling, MTM Planar Magnetic driver",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide20.png"
+      ]
+    },
+    {
+      "id": "wisdom-s10-subwoofer",
+      "brand": "Wisdom",
+      "model": "S10 Subwoofer",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "Freestanding, highly detailed and dynamic, high output 10\" driver",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide21.png"
+      ]
+    },
+    {
+      "id": "wisdom-s57i-subwoofer",
+      "brand": "Wisdom",
+      "model": "S57i Subwoofer",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "In wall or ceiling, only 4\" deep, regenerative transmission line tech",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide22.png"
+      ]
+    },
+    {
+      "id": "wisdom-sas-rtl",
+      "brand": "Wisdom",
+      "model": "SAS RTL",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "Freestanding or in wall/cabinetry, regenerative transmission line technology",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide23.png"
+      ]
+    },
+    {
+      "id": "wisdom-scs-2-rtl",
+      "brand": "Wisdom",
+      "model": "SCS-2 RTL",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "Freestanding or in wall/cabinetry, regenerative transmission line technology",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide24.png"
+      ]
+    },
+    {
+      "id": "wisdom-s90i-rtl",
+      "brand": "Wisdom",
+      "model": "S90i RTL",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "In wall or in ceiling, regenerative transmission line technology",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide25.png"
+      ]
+    },
+    {
+      "id": "wisdom-s110i-rtl",
+      "brand": "Wisdom",
+      "model": "S110i RTL",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "In wall/floor/ceiling, regenerative transmission line design, high output",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide26.png"
+      ]
+    },
+    {
+      "id": "wisdom-sts-rtl",
+      "brand": "Wisdom",
+      "model": "STS RTL",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "Freestanding or behind baffle/screen wall, regenerative transmission line",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide27.png"
+      ]
+    },
+    {
+      "id": "wisdom-srs-rtl",
+      "brand": "Wisdom",
+      "model": "SRS RTL",
+      "category": "Subwoofers",
+      "subcategory": "Subwoofer",
+      "description": "Freestanding or behind baffle/screen wall, regenerative transmission line",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide28.png"
+      ]
+    },
+    {
+      "id": "wisdom-sa2",
+      "brand": "Wisdom",
+      "model": "SA2",
+      "category": "Amplification",
+      "subcategory": "Wisdom Amplification",
+      "description": "High efficiency, enormous power reserves, 2\u00d7500W, Pro XLR",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide30.png"
+      ]
+    },
+    {
+      "id": "wisdom-sa2-dsp",
+      "brand": "Wisdom",
+      "model": "SA2-DSP",
+      "category": "Amplification",
+      "subcategory": "Wisdom Amplification",
+      "description": "High efficiency, 2\u00d7500W with on board DSP, Pro XLR",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide31.png"
+      ]
+    },
+    {
+      "id": "wisdom-sa3",
+      "brand": "Wisdom",
+      "model": "SA3",
+      "category": "Amplification",
+      "subcategory": "Wisdom Amplification",
+      "description": "High efficiency, enormous power reserves, 3\u00d7500W, Pro XLR",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide32.png"
+      ]
+    },
+    {
+      "id": "wisdom-sa3-dsp",
+      "brand": "Wisdom",
+      "model": "SA3-DSP",
+      "category": "Amplification",
+      "subcategory": "Wisdom Amplification",
+      "description": "High efficiency, 3\u00d7500W with on board DSP, Pro XLR",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide33.png"
+      ]
+    },
+    {
+      "id": "wisdom-sa8",
+      "brand": "Wisdom",
+      "model": "SA8",
+      "category": "Amplification",
+      "subcategory": "Wisdom Amplification",
+      "description": "High efficiency, enormous power reserves, 8\u00d7400W, Pro XLR",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide34.png"
+      ]
+    },
+    {
+      "id": "wisdom-sa8-dsp",
+      "brand": "Wisdom",
+      "model": "SA8-DSP",
+      "category": "Amplification",
+      "subcategory": "Wisdom Amplification",
+      "description": "High efficiency, 8\u00d7400W with on board DSP, Pro XLR",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide35.png"
+      ]
+    },
+    {
+      "id": "wisdom-sw-1-dsp",
+      "brand": "Wisdom",
+      "model": "SW-1 DSP",
+      "category": "Amplification",
+      "subcategory": "Wisdom Amplification",
+      "description": "Required for Wisdom RTL subwoofers, on board DSP",
+      "manufacturer": "Wisdom Audio",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide36.png"
+      ]
+    },
+    {
+      "id": "mk-avr5",
+      "brand": "M&K",
+      "model": "AVR5",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "High-performance A/V receiver, Dirac Live ready, Dolby Atmos",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide49.png"
+      ]
+    },
+    {
+      "id": "sonance-avr5",
+      "brand": "Sonance",
+      "model": "AVR5",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "High-performance A/V receiver, Dirac Live ready, Dolby Atmos",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide43.png"
+      ]
+    },
+    {
+      "id": "wisdom-avr5",
+      "brand": "Wisdom",
+      "model": "AVR5",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "High-performance A/V receiver, Dirac Live ready, Dolby Atmos",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide37.png"
+      ]
+    },
+    {
+      "id": "mk-avr11",
+      "brand": "M&K",
+      "model": "AVR11",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Dolby Atmos / DTS:X / AURO-3D 7.1.4 decoding, HDMI 2.1, 8K",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide50.png"
+      ]
+    },
+    {
+      "id": "sonance-avr11",
+      "brand": "Sonance",
+      "model": "AVR11",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Dolby Atmos / DTS:X / AURO-3D 7.1.4 decoding, HDMI 2.1, 8K",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide44.png"
+      ]
+    },
+    {
+      "id": "wisdom-avr11",
+      "brand": "Wisdom",
+      "model": "AVR11",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Dolby Atmos / DTS:X / AURO-3D 7.1.4 decoding, HDMI 2.1, 8K",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide38.png"
+      ]
+    },
+    {
+      "id": "mk-avr21",
+      "brand": "M&K",
+      "model": "AVR21",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Dolby Atmos / DTS:X / AURO-3D decoding, HDMI 2.1, 8K@60fps",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide51.png"
+      ]
+    },
+    {
+      "id": "sonance-avr21",
+      "brand": "Sonance",
+      "model": "AVR21",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Dolby Atmos / DTS:X / AURO-3D decoding, HDMI 2.1, 8K@60fps",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide45.png"
+      ]
+    },
+    {
+      "id": "wisdom-avr21",
+      "brand": "Wisdom",
+      "model": "AVR21",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Dolby Atmos / DTS:X / AURO-3D decoding, HDMI 2.1, 8K@60fps",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide39.png"
+      ]
+    },
+    {
+      "id": "mk-avr31",
+      "brand": "M&K",
+      "model": "AVR31",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Dolby Atmos / DTS:X / AURO-3D decoding, HDMI 2.1, 8K@60fps",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide52.png"
+      ]
+    },
+    {
+      "id": "sonance-avr31",
+      "brand": "Sonance",
+      "model": "AVR31",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Dolby Atmos / DTS:X / AURO-3D decoding, HDMI 2.1, 8K@60fps",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide46.png"
+      ]
+    },
+    {
+      "id": "wisdom-avr31",
+      "brand": "Wisdom",
+      "model": "AVR31",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Dolby Atmos / DTS:X / AURO-3D decoding, HDMI 2.1, 8K@60fps",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide40.png"
+      ]
+    },
+    {
+      "id": "mk-av41",
+      "brand": "M&K",
+      "model": "AV41",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Dolby Atmos / DTS:X / AURO-3D decoding, HDMI 2.1, 8K@60fps",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide53.png"
+      ]
+    },
+    {
+      "id": "sonance-av41",
+      "brand": "Sonance",
+      "model": "AV41",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Dolby Atmos / DTS:X / AURO-3D decoding, HDMI 2.1, 8K@60fps",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide47.png"
+      ]
+    },
+    {
+      "id": "wisdom-av41",
+      "brand": "Wisdom",
+      "model": "AV41",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Dolby Atmos / DTS:X / AURO-3D decoding, HDMI 2.1, 8K@60fps",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide41.png"
+      ]
+    },
+    {
+      "id": "mk-pa410",
+      "brand": "M&K",
+      "model": "PA410",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Class A/B amplifier, toroidal transformer, acoustically damped chassis",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide55.png"
+      ]
+    },
+    {
+      "id": "sonance-pa410",
+      "brand": "Sonance",
+      "model": "PA410",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Class A/B amplifier, toroidal transformer, acoustically damped chassis",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide52.png"
+      ]
+    },
+    {
+      "id": "wisdom-pa410",
+      "brand": "Wisdom",
+      "model": "PA410",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Class A/B amplifier, toroidal transformer, acoustically damped chassis",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide42.png"
+      ]
+    },
+    {
+      "id": "mk-pa720",
+      "brand": "M&K",
+      "model": "PA720",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Class G amplifier, toroidal transformer, acoustically damped chassis",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide56.png"
+      ]
+    },
+    {
+      "id": "sonance-pa720",
+      "brand": "Sonance",
+      "model": "PA720",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Class G amplifier, toroidal transformer, acoustically damped chassis",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide53.png"
+      ]
+    },
+    {
+      "id": "wisdom-pa720",
+      "brand": "Wisdom",
+      "model": "PA720",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Class G amplifier, toroidal transformer, acoustically damped chassis",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide43.png"
+      ]
+    },
+    {
+      "id": "mk-pa240",
+      "brand": "M&K",
+      "model": "PA240",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Class G amplifier, toroidal transformer, acoustically damped chassis",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide57.png"
+      ]
+    },
+    {
+      "id": "sonance-pa240",
+      "brand": "Sonance",
+      "model": "PA240",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Class G amplifier, toroidal transformer, acoustically damped chassis",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide54.png"
+      ]
+    },
+    {
+      "id": "wisdom-pa240",
+      "brand": "Wisdom",
+      "model": "PA240",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Class G amplifier, toroidal transformer, acoustically damped chassis",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide44.png"
+      ]
+    },
+    {
+      "id": "mk-isp-evo",
+      "brand": "M&K",
+      "model": "ISP EVO",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Modular 20/32 channel fully digital pre-amp processor, class leading",
+      "manufacturer": "Trinnov",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide58.png"
+      ]
+    },
+    {
+      "id": "sonance-isp-evo",
+      "brand": "Sonance",
+      "model": "ISP EVO",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Modular 20/32 channel fully digital pre-amp processor, class leading",
+      "manufacturer": "Trinnov",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide55.png"
+      ]
+    },
+    {
+      "id": "wisdom-isp-evo",
+      "brand": "Wisdom",
+      "model": "ISP EVO",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Modular 20/32 channel fully digital pre-amp processor, class leading",
+      "manufacturer": "Trinnov",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide45.png"
+      ]
+    },
+    {
+      "id": "mk-isp-elite-mk3",
+      "brand": "M&K",
+      "model": "ISP ELITE MK3",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Modular 16/24/32 channel, class leading audio quality, Dirac Live",
+      "manufacturer": "Trinnov",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide59.png"
+      ]
+    },
+    {
+      "id": "sonance-isp-elite-mk3",
+      "brand": "Sonance",
+      "model": "ISP ELITE MK3",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Modular 16/24/32 channel, class leading audio quality, Dirac Live",
+      "manufacturer": "Trinnov",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide56.png"
+      ]
+    },
+    {
+      "id": "wisdom-isp-elite-mk3",
+      "brand": "Wisdom",
+      "model": "ISP ELITE MK3",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Modular 16/24/32 channel, class leading audio quality, Dirac Live",
+      "manufacturer": "Trinnov",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide46.png"
+      ]
+    },
+    {
+      "id": "mk-isp-core-16",
+      "brand": "M&K",
+      "model": "ISP CORE 16",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Up to 16 channel native decoding, class leading, Dirac Live Bass Control",
+      "manufacturer": "Trinnov",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide60.png"
+      ]
+    },
+    {
+      "id": "sonance-isp-core-16",
+      "brand": "Sonance",
+      "model": "ISP CORE 16",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Up to 16 channel native decoding, class leading, Dirac Live Bass Control",
+      "manufacturer": "Trinnov",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide57.png"
+      ]
+    },
+    {
+      "id": "wisdom-isp-core-16",
+      "brand": "Wisdom",
+      "model": "ISP CORE 16",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Up to 16 channel native decoding, class leading, Dirac Live Bass Control",
+      "manufacturer": "Trinnov",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide47.png"
+      ]
+    },
+    {
+      "id": "mk-isp-fusion-20",
+      "brand": "M&K",
+      "model": "ISP Fusion 20",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "16 channel power amp, Dolby Atmos / Auro-3D / DTS:X Pro / IMAX Enhanced",
+      "manufacturer": "Trinnov",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide61.png"
+      ]
+    },
+    {
+      "id": "sonance-isp-fusion-20",
+      "brand": "Sonance",
+      "model": "ISP Fusion 20",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "16 channel power amp, Dolby Atmos / Auro-3D / DTS:X Pro / IMAX Enhanced",
+      "manufacturer": "Trinnov",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide58.png"
+      ]
+    },
+    {
+      "id": "wisdom-isp-fusion-20",
+      "brand": "Wisdom",
+      "model": "ISP Fusion 20",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "16 channel power amp, Dolby Atmos / Auro-3D / DTS:X Pro / IMAX Enhanced",
+      "manufacturer": "Trinnov",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide48.png"
+      ]
+    },
+    {
+      "id": "mk-pa-8",
+      "brand": "M&K",
+      "model": "PA 8",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "8 channel power amplifier, single ended or bridge tied load, from 200W",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide62.png"
+      ]
+    },
+    {
+      "id": "sonance-pa-8",
+      "brand": "Sonance",
+      "model": "PA 8",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "8 channel power amplifier, single ended or bridge tied load, from 200W",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide59.png"
+      ]
+    },
+    {
+      "id": "wisdom-pa-8",
+      "brand": "Wisdom",
+      "model": "PA 8",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "8 channel power amplifier, single ended or bridge tied load, from 200W",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide49.png"
+      ]
+    },
+    {
+      "id": "mk-pa-16",
+      "brand": "M&K",
+      "model": "PA 16",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "16 channel power amplifier, single ended, 200W per channel, up to 3kW",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide63.png"
+      ]
+    },
+    {
+      "id": "sonance-pa-16",
+      "brand": "Sonance",
+      "model": "PA 16",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "16 channel power amplifier, single ended, 200W per channel, up to 3kW",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide60.png"
+      ]
+    },
+    {
+      "id": "wisdom-pa-16",
+      "brand": "Wisdom",
+      "model": "PA 16",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "16 channel power amplifier, single ended, 200W per channel, up to 3kW",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide50.png"
+      ]
+    },
+    {
+      "id": "mk-rx-a2a",
+      "brand": "M&K",
+      "model": "RX-A2A",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "7.2-ch AVENTAGE with Cinema DSP 3D, 7-channel surround sound",
+      "manufacturer": "Yamaha",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide64.png"
+      ]
+    },
+    {
+      "id": "sonance-rx-a2a",
+      "brand": "Sonance",
+      "model": "RX-A2A",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "7.2-ch AVENTAGE with Cinema DSP 3D, 7-channel surround sound",
+      "manufacturer": "Yamaha",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide61.png"
+      ]
+    },
+    {
+      "id": "wisdom-rx-a2a",
+      "brand": "Wisdom",
+      "model": "RX-A2A",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "7.2-ch AVENTAGE with Cinema DSP 3D, 7-channel surround sound",
+      "manufacturer": "Yamaha",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide51.png"
+      ]
+    },
+    {
+      "id": "mk-rx-a4a",
+      "brand": "M&K",
+      "model": "RX-A4A",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "7.2-ch powerful surround, Zone2, AI automatically optimises sound",
+      "manufacturer": "Yamaha",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide65.png"
+      ]
+    },
+    {
+      "id": "sonance-rx-a4a",
+      "brand": "Sonance",
+      "model": "RX-A4A",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "7.2-ch powerful surround, Zone2, AI automatically optimises sound",
+      "manufacturer": "Yamaha",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide62.png"
+      ]
+    },
+    {
+      "id": "wisdom-rx-a4a",
+      "brand": "Wisdom",
+      "model": "RX-A4A",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "7.2-ch powerful surround, Zone2, AI automatically optimises sound",
+      "manufacturer": "Yamaha",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide52.png"
+      ]
+    },
+    {
+      "id": "mk-rx-a6a",
+      "brand": "M&K",
+      "model": "RX-A6A",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "9.2-ch with 11.2 processing, 2 channel XLR, powerful surround",
+      "manufacturer": "Yamaha",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide66.png"
+      ]
+    },
+    {
+      "id": "sonance-rx-a6a",
+      "brand": "Sonance",
+      "model": "RX-A6A",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "9.2-ch with 11.2 processing, 2 channel XLR, powerful surround",
+      "manufacturer": "Yamaha",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide63.png"
+      ]
+    },
+    {
+      "id": "wisdom-rx-a6a",
+      "brand": "Wisdom",
+      "model": "RX-A6A",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "9.2-ch with 11.2 processing, 2 channel XLR, powerful surround",
+      "manufacturer": "Yamaha",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide53.png"
+      ]
+    },
+    {
+      "id": "mk-rx-a8a",
+      "brand": "M&K",
+      "model": "RX-A8A",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "11.2-ch surround, Zone2/3/4, AURO 3D, Dolby Atmos, DTS:X",
+      "manufacturer": "Yamaha",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide67.png"
+      ]
+    },
+    {
+      "id": "sonance-rx-a8a",
+      "brand": "Sonance",
+      "model": "RX-A8A",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "11.2-ch surround, Zone2/3/4, AURO 3D, Dolby Atmos, DTS:X",
+      "manufacturer": "Yamaha",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide64.png"
+      ]
+    },
+    {
+      "id": "wisdom-rx-a8a",
+      "brand": "Wisdom",
+      "model": "RX-A8A",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "11.2-ch surround, Zone2/3/4, AURO 3D, Dolby Atmos, DTS:X",
+      "manufacturer": "Yamaha",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide54.png"
+      ]
+    },
+    {
+      "id": "mk-avr10",
+      "brand": "M&K",
+      "model": "AVR10",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Audiophile experience, pro audiophile digital audio convertor",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide54.png"
+      ]
+    },
+    {
+      "id": "sonance-avr10",
+      "brand": "Sonance",
+      "model": "AVR10",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Audiophile experience, pro audiophile digital audio convertor",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide48.png"
+      ]
+    },
+    {
+      "id": "sonance-avr20",
+      "brand": "Sonance",
+      "model": "AVR20",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Audiophile experience, pro audiophile digital audio convertor, AVR20",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide49.png"
+      ]
+    },
+    {
+      "id": "sonance-avr30",
+      "brand": "Sonance",
+      "model": "AVR30",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Ultimate home cinema machine, pro audiophile digital audio convertor",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide50.png"
+      ]
+    },
+    {
+      "id": "sonance-avr40",
+      "brand": "Sonance",
+      "model": "AVR40",
+      "category": "Amplification",
+      "subcategory": "Audio Processor / Amplifier",
+      "description": "Ultimate home cinema machine, pro audiophile digital audio convertor",
+      "manufacturer": "Habitech",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide51.png"
+      ]
+    },
+    {
+      "id": "mk-envy-core",
+      "brand": "M&K",
+      "model": "ENVY CORE",
+      "category": "Video Processors",
+      "subcategory": "Video Processor",
+      "description": "Reference 4K HDR dynamic tone mapping, instant aspect ratio handling",
+      "manufacturer": "DVDO",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide68.png"
+      ]
+    },
+    {
+      "id": "sonance-envy-core",
+      "brand": "Sonance",
+      "model": "ENVY CORE",
+      "category": "Video Processors",
+      "subcategory": "Video Processor",
+      "description": "Reference 4K HDR dynamic tone mapping, instant aspect ratio handling",
+      "manufacturer": "DVDO",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide65.png"
+      ]
+    },
+    {
+      "id": "wisdom-envy-core",
+      "brand": "Wisdom",
+      "model": "ENVY CORE",
+      "category": "Video Processors",
+      "subcategory": "Video Processor",
+      "description": "Reference 4K HDR dynamic tone mapping, instant aspect ratio handling",
+      "manufacturer": "DVDO",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide55.png"
+      ]
+    },
+    {
+      "id": "mk-envy-pro-mk2",
+      "brand": "M&K",
+      "model": "ENVY PRO MK2",
+      "category": "Video Processors",
+      "subcategory": "Video Processor",
+      "description": "Reference 4K HDR dynamic tone mapping, instant aspect ratio handling",
+      "manufacturer": "DVDO",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide69.png"
+      ]
+    },
+    {
+      "id": "sonance-envy-pro-mk2",
+      "brand": "Sonance",
+      "model": "ENVY PRO MK2",
+      "category": "Video Processors",
+      "subcategory": "Video Processor",
+      "description": "Reference 4K HDR dynamic tone mapping, instant aspect ratio handling",
+      "manufacturer": "DVDO",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide66.png"
+      ]
+    },
+    {
+      "id": "wisdom-envy-pro-mk2",
+      "brand": "Wisdom",
+      "model": "ENVY PRO MK2",
+      "category": "Video Processors",
+      "subcategory": "Video Processor",
+      "description": "Reference 4K HDR dynamic tone mapping, instant aspect ratio handling",
+      "manufacturer": "DVDO",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide56.png"
+      ]
+    },
+    {
+      "id": "mk-envy-extreme-mk2",
+      "brand": "M&K",
+      "model": "ENVY EXTREME MK2",
+      "category": "Video Processors",
+      "subcategory": "Video Processor",
+      "description": "MotionAI world's first AI based motion interpolation, reference standard",
+      "manufacturer": "DVDO",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide70.png"
+      ]
+    },
+    {
+      "id": "sonance-envy-extreme-mk2",
+      "brand": "Sonance",
+      "model": "ENVY EXTREME MK2",
+      "category": "Video Processors",
+      "subcategory": "Video Processor",
+      "description": "MotionAI world's first AI based motion interpolation, reference standard",
+      "manufacturer": "DVDO",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide67.png"
+      ]
+    },
+    {
+      "id": "wisdom-envy-extreme-mk2",
+      "brand": "Wisdom",
+      "model": "ENVY EXTREME MK2",
+      "category": "Video Processors",
+      "subcategory": "Video Processor",
+      "description": "MotionAI world's first AI based motion interpolation, reference standard",
+      "manufacturer": "DVDO",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide57.png"
+      ]
+    },
+    {
+      "id": "mk-w5800",
+      "brand": "M&K",
+      "model": "W5800",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "True 4K UHD 8.3M pixels, laser precision for unmatched visuals",
+      "manufacturer": "BenQ",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide74.png"
+      ]
+    },
+    {
+      "id": "sonance-w5800",
+      "brand": "Sonance",
+      "model": "W5800",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "True 4K UHD 8.3M pixels, laser precision for unmatched visuals",
+      "manufacturer": "BenQ",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide71.png"
+      ]
+    },
+    {
+      "id": "wisdom-w5800",
+      "brand": "Wisdom",
+      "model": "W5800",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "True 4K UHD 8.3M pixels, laser precision for unmatched visuals",
+      "manufacturer": "BenQ",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide61.png"
+      ]
+    },
+    {
+      "id": "mk-w5850",
+      "brand": "M&K",
+      "model": "W5850",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "True 4K UHD 8.3M pixels, laser precision for unmatched visuals",
+      "manufacturer": "BenQ",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide75.png"
+      ]
+    },
+    {
+      "id": "sonance-w5850",
+      "brand": "Sonance",
+      "model": "W5850",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "True 4K UHD 8.3M pixels, laser precision for unmatched visuals",
+      "manufacturer": "BenQ",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide72.png"
+      ]
+    },
+    {
+      "id": "wisdom-w5850",
+      "brand": "Wisdom",
+      "model": "W5850",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "True 4K UHD 8.3M pixels, laser precision for unmatched visuals",
+      "manufacturer": "BenQ",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide62.png"
+      ]
+    },
+    {
+      "id": "mk-w4100i",
+      "brand": "M&K",
+      "model": "W4100i",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "True 4K UHD 8.3M pixels, 4 LED light source, keystone correction",
+      "manufacturer": "BenQ",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide76.png"
+      ]
+    },
+    {
+      "id": "sonance-w4100i",
+      "brand": "Sonance",
+      "model": "W4100i",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "True 4K UHD 8.3M pixels, 4 LED light source, keystone correction",
+      "manufacturer": "BenQ",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide73.png"
+      ]
+    },
+    {
+      "id": "wisdom-w4100i",
+      "brand": "Wisdom",
+      "model": "W4100i",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "True 4K UHD 8.3M pixels, 4 LED light source, keystone correction",
+      "manufacturer": "BenQ",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide63.png"
+      ]
+    },
+    {
+      "id": "mk-lx-nz30",
+      "brand": "M&K",
+      "model": "LX-NZ30",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "High efficiency BLU-Escent laser light source, HDR rich video content",
+      "manufacturer": "BenQ",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide77.png"
+      ]
+    },
+    {
+      "id": "sonance-lx-nz30",
+      "brand": "Sonance",
+      "model": "LX-NZ30",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "High efficiency BLU-Escent laser light source, HDR rich video content",
+      "manufacturer": "BenQ",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide74.png"
+      ]
+    },
+    {
+      "id": "wisdom-lx-nz30",
+      "brand": "Wisdom",
+      "model": "LX-NZ30",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "High efficiency BLU-Escent laser light source, HDR rich video content",
+      "manufacturer": "BenQ",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide64.png"
+      ]
+    },
+    {
+      "id": "mk-nz900",
+      "brand": "M&K",
+      "model": "NZ900",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "2nd gen 8K/e-shiftX technology, new BLU-Escent laser light source",
+      "manufacturer": "JVC",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide79.png"
+      ]
+    },
+    {
+      "id": "sonance-nz900",
+      "brand": "Sonance",
+      "model": "NZ900",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "2nd gen 8K/e-shiftX technology, new BLU-Escent laser light source",
+      "manufacturer": "JVC",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide75.png"
+      ]
+    },
+    {
+      "id": "wisdom-nz900",
+      "brand": "Wisdom",
+      "model": "NZ900",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "2nd gen 8K/e-shiftX technology, new BLU-Escent laser light source",
+      "manufacturer": "JVC",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide66.png"
+      ]
+    },
+    {
+      "id": "mk-nz800",
+      "brand": "M&K",
+      "model": "NZ800",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "High-performance 4K UHD/HDR, BLU-Escent laser",
+      "manufacturer": "JVC",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide80.png"
+      ]
+    },
+    {
+      "id": "sonance-nz800",
+      "brand": "Sonance",
+      "model": "NZ800",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "High-performance 4K UHD/HDR, BLU-Escent laser",
+      "manufacturer": "JVC",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide76.png"
+      ]
+    },
+    {
+      "id": "wisdom-nz800",
+      "brand": "Wisdom",
+      "model": "NZ800",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "High-performance 4K UHD/HDR, BLU-Escent laser",
+      "manufacturer": "JVC",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide67.png"
+      ]
+    },
+    {
+      "id": "mk-nz700",
+      "brand": "M&K",
+      "model": "NZ700",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Completely redesigned, world's smallest native 4K projector",
+      "manufacturer": "JVC",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide81.png"
+      ]
+    },
+    {
+      "id": "sonance-nz700",
+      "brand": "Sonance",
+      "model": "NZ700",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Completely redesigned, world's smallest native 4K projector",
+      "manufacturer": "JVC",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide77.png"
+      ]
+    },
+    {
+      "id": "wisdom-nz700",
+      "brand": "Wisdom",
+      "model": "NZ700",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Completely redesigned, world's smallest native 4K projector",
+      "manufacturer": "JVC",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide68.png"
+      ]
+    },
+    {
+      "id": "mk-nz500",
+      "brand": "M&K",
+      "model": "NZ500",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "World's smallest native 4K projector, high brightness laser",
+      "manufacturer": "JVC",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide82.png"
+      ]
+    },
+    {
+      "id": "sonance-nz500",
+      "brand": "Sonance",
+      "model": "NZ500",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "World's smallest native 4K projector, high brightness laser",
+      "manufacturer": "JVC",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide78.png"
+      ]
+    },
+    {
+      "id": "wisdom-nz500",
+      "brand": "Wisdom",
+      "model": "NZ500",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "World's smallest native 4K projector, high brightness laser",
+      "manufacturer": "JVC",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide69.png"
+      ]
+    },
+    {
+      "id": "mk-4k-hs",
+      "brand": "M&K",
+      "model": "4K-HS",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "High fidelity 1DLP 4K UHD laser illumination projector",
+      "manufacturer": "Barco",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide83.png"
+      ]
+    },
+    {
+      "id": "sonance-4k-hs",
+      "brand": "Sonance",
+      "model": "4K-HS",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "High fidelity 1DLP 4K UHD laser illumination projector",
+      "manufacturer": "Barco",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide79.png"
+      ]
+    },
+    {
+      "id": "wisdom-4k-hs",
+      "brand": "Wisdom",
+      "model": "4K-HS",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "High fidelity 1DLP 4K UHD laser illumination projector",
+      "manufacturer": "Barco",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide70.png"
+      ]
+    },
+    {
+      "id": "mk-m-4kplus15",
+      "brand": "M&K",
+      "model": "M 4K+15",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Smallest lightest fully omnidirectional 3DLP RGB pure laser projector",
+      "manufacturer": "Barco",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide84.png"
+      ]
+    },
+    {
+      "id": "sonance-m-4kplus15",
+      "brand": "Sonance",
+      "model": "M 4K+15",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Smallest lightest fully omnidirectional 3DLP RGB pure laser projector",
+      "manufacturer": "Barco",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide80.png"
+      ]
+    },
+    {
+      "id": "wisdom-m-4kplus15",
+      "brand": "Wisdom",
+      "model": "M 4K+15",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Smallest lightest fully omnidirectional 3DLP RGB pure laser projector",
+      "manufacturer": "Barco",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide71.png"
+      ]
+    },
+    {
+      "id": "mk-m-4k15",
+      "brand": "M&K",
+      "model": "M 4K15",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Smallest lightest fully omni directional 3DLP RGB pure laser projector",
+      "manufacturer": "Barco",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide85.png"
+      ]
+    },
+    {
+      "id": "sonance-m-4k15",
+      "brand": "Sonance",
+      "model": "M 4K15",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Smallest lightest fully omni directional 3DLP RGB pure laser projector",
+      "manufacturer": "Barco",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide81.png"
+      ]
+    },
+    {
+      "id": "wisdom-m-4k15",
+      "brand": "Wisdom",
+      "model": "M 4K15",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Smallest lightest fully omni directional 3DLP RGB pure laser projector",
+      "manufacturer": "Barco",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide72.png"
+      ]
+    },
+    {
+      "id": "mk-m-4k25",
+      "brand": "M&K",
+      "model": "M 4K25",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Smallest lightest fully omni directional 3DLP RGB pure laser projector",
+      "manufacturer": "Barco",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide87.png"
+      ]
+    },
+    {
+      "id": "sonance-m-4k25",
+      "brand": "Sonance",
+      "model": "M 4K25",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Smallest lightest fully omni directional 3DLP RGB pure laser projector",
+      "manufacturer": "Barco",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide82.png"
+      ]
+    },
+    {
+      "id": "wisdom-m-4k25",
+      "brand": "Wisdom",
+      "model": "M 4K25",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Smallest lightest fully omni directional 3DLP RGB pure laser projector",
+      "manufacturer": "Barco",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide73.png"
+      ]
+    },
+    {
+      "id": "mk-cp44-series",
+      "brand": "M&K",
+      "model": "CP44 Series",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Christie Real Laser, next generation Multi Laser Pack Devices",
+      "manufacturer": "Christie",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide88.png"
+      ]
+    },
+    {
+      "id": "sonance-cp44-series",
+      "brand": "Sonance",
+      "model": "CP44 Series",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Christie Real Laser, next generation Multi Laser Pack Devices",
+      "manufacturer": "Christie",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide83.png"
+      ]
+    },
+    {
+      "id": "wisdom-cp44-series",
+      "brand": "Wisdom",
+      "model": "CP44 Series",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Christie Real Laser, next generation Multi Laser Pack Devices",
+      "manufacturer": "Christie",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide74.png"
+      ]
+    },
+    {
+      "id": "mk-griffyn-4k",
+      "brand": "M&K",
+      "model": "Griffyn 4K",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Christie superior electronics proprietary RGB pure laser technology",
+      "manufacturer": "Christie",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide89.png"
+      ]
+    },
+    {
+      "id": "sonance-griffyn-4k",
+      "brand": "Sonance",
+      "model": "Griffyn 4K",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Christie superior electronics proprietary RGB pure laser technology",
+      "manufacturer": "Christie",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide84.png"
+      ]
+    },
+    {
+      "id": "wisdom-griffyn-4k",
+      "brand": "Wisdom",
+      "model": "Griffyn 4K",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Christie superior electronics proprietary RGB pure laser technology",
+      "manufacturer": "Christie",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide75.png"
+      ]
+    },
+    {
+      "id": "mk-eclipse-4k",
+      "brand": "M&K",
+      "model": "Eclipse 4K",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Christie Eclipse, true HDR imagery, RGB pure laser projector",
+      "manufacturer": "Christie",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide90.png"
+      ]
+    },
+    {
+      "id": "sonance-eclipse-4k",
+      "brand": "Sonance",
+      "model": "Eclipse 4K",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Christie Eclipse, true HDR imagery, RGB pure laser projector",
+      "manufacturer": "Christie",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide85.png"
+      ]
+    },
+    {
+      "id": "wisdom-eclipse-4k",
+      "brand": "Wisdom",
+      "model": "Eclipse 4K",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Christie Eclipse, true HDR imagery, RGB pure laser projector",
+      "manufacturer": "Christie",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide76.png"
+      ]
+    },
+    {
+      "id": "mk-jazz-series",
+      "brand": "M&K",
+      "model": "Jazz Series",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Flexible versatile design, compact form factor, quiet operation",
+      "manufacturer": "Christie",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide91.png"
+      ]
+    },
+    {
+      "id": "sonance-jazz-series",
+      "brand": "Sonance",
+      "model": "Jazz Series",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Flexible versatile design, compact form factor, quiet operation",
+      "manufacturer": "Christie",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide86.png"
+      ]
+    },
+    {
+      "id": "wisdom-jazz-series",
+      "brand": "Wisdom",
+      "model": "Jazz Series",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Flexible versatile design, compact form factor, quiet operation",
+      "manufacturer": "Christie",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide77.png"
+      ]
+    },
+    {
+      "id": "mk-4k860-is-7200",
+      "brand": "M&K",
+      "model": "4K860-IS 7200",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Inspire Series fixed lens projector, compact and lightweight",
+      "manufacturer": "Christie",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide92.png"
+      ]
+    },
+    {
+      "id": "sonance-4k860-is-7200",
+      "brand": "Sonance",
+      "model": "4K860-IS 7200",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Inspire Series fixed lens projector, compact and lightweight",
+      "manufacturer": "Christie",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide87.png"
+      ]
+    },
+    {
+      "id": "wisdom-4k860-is-7200",
+      "brand": "Wisdom",
+      "model": "4K860-IS 7200",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "Inspire Series fixed lens projector, compact and lightweight",
+      "manufacturer": "Christie",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide78.png"
+      ]
+    },
+    {
+      "id": "mk-np5",
+      "brand": "M&K",
+      "model": "NP5",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "0.69\" 4K D-ILA device x3, compatible with dynamic range",
+      "manufacturer": "NEC",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide78.png"
+      ]
+    },
+    {
+      "id": "wisdom-np5",
+      "brand": "Wisdom",
+      "model": "NP5",
+      "category": "Projectors",
+      "subcategory": "Projector",
+      "description": "0.69\" 4K D-ILA device x3, compatible with dynamic range",
+      "manufacturer": "NEC",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide65.png"
+      ]
+    },
+    {
+      "id": "mk-qn90f-98in",
+      "brand": "M&K",
+      "model": "QN90F 98\"",
+      "category": "TV",
+      "subcategory": "TV",
+      "description": "Powerful 4K processor, breathtaking 4K Ultra HD, Samsung Neo QLED",
+      "manufacturer": "Samsung",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide94.png"
+      ]
+    },
+    {
+      "id": "sonance-qn90f-98in",
+      "brand": "Sonance",
+      "model": "QN90F 98\"",
+      "category": "TV",
+      "subcategory": "TV",
+      "description": "Powerful 4K processor, breathtaking 4K Ultra HD, Samsung Neo QLED",
+      "manufacturer": "Samsung",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide89.png"
+      ]
+    },
+    {
+      "id": "wisdom-qn90f-98in",
+      "brand": "Wisdom",
+      "model": "QN90F 98\"",
+      "category": "TV",
+      "subcategory": "TV",
+      "description": "Powerful 4K processor, breathtaking 4K Ultra HD, Samsung Neo QLED",
+      "manufacturer": "Samsung",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide80.png"
+      ]
+    },
+    {
+      "id": "mk-fixed-frame-screen-elite-a",
+      "brand": "M&K",
+      "model": "Fixed Frame Screen (Elite A)",
+      "category": "Projection Screens",
+      "subcategory": "Screen",
+      "description": "Fixed frame, 16K Ready, HDR+ optimised, colour fidelity",
+      "manufacturer": "Stewart / Elite",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide97.png",
+        "slides/mk/Slide98.png"
+      ]
+    },
+    {
+      "id": "sonance-fixed-frame-screen-elite-a",
+      "brand": "Sonance",
+      "model": "Fixed Frame Screen (Elite A)",
+      "category": "Projection Screens",
+      "subcategory": "Screen",
+      "description": "Fixed frame, 16K Ready, HDR+ optimised, colour fidelity",
+      "manufacturer": "Stewart / Elite",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide92.png",
+        "slides/sonance/Slide93.png"
+      ]
+    },
+    {
+      "id": "wisdom-fixed-frame-screen-elite-a",
+      "brand": "Wisdom",
+      "model": "Fixed Frame Screen (Elite A)",
+      "category": "Projection Screens",
+      "subcategory": "Screen",
+      "description": "Fixed frame, 16K Ready, HDR+ optimised, colour fidelity",
+      "manufacturer": "Stewart / Elite",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide83.png",
+        "slides/wisdom/Slide84.png"
+      ]
+    },
+    {
+      "id": "mk-fixed-frame-screen-elite-b",
+      "brand": "M&K",
+      "model": "Fixed Frame Screen (Elite B)",
+      "category": "Projection Screens",
+      "subcategory": "Screen",
+      "description": "Fixed frame, 16K Ready, HDR+ optimised, colour fidelity",
+      "manufacturer": "Stewart / Elite",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide99.png",
+        "slides/mk/Slide100.png"
+      ]
+    },
+    {
+      "id": "sonance-fixed-frame-screen-elite-b",
+      "brand": "Sonance",
+      "model": "Fixed Frame Screen (Elite B)",
+      "category": "Projection Screens",
+      "subcategory": "Screen",
+      "description": "Fixed frame, 16K Ready, HDR+ optimised, colour fidelity",
+      "manufacturer": "Stewart / Elite",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide94.png",
+        "slides/sonance/Slide95.png"
+      ]
+    },
+    {
+      "id": "wisdom-fixed-frame-screen-elite-b",
+      "brand": "Wisdom",
+      "model": "Fixed Frame Screen (Elite B)",
+      "category": "Projection Screens",
+      "subcategory": "Screen",
+      "description": "Fixed frame, 16K Ready, HDR+ optimised, colour fidelity",
+      "manufacturer": "Stewart / Elite",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide85.png",
+        "slides/wisdom/Slide86.png"
+      ]
+    },
+    {
+      "id": "mk-in-ceiling-tensioned-screen-a",
+      "brand": "M&K",
+      "model": "In Ceiling Tensioned Screen (A)",
+      "category": "Projection Screens",
+      "subcategory": "Screen",
+      "description": "In ceiling tensioned, 16K Ready, HDR+ optimised",
+      "manufacturer": "Stewart / Elite",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide101.png",
+        "slides/mk/Slide102.png"
+      ]
+    },
+    {
+      "id": "sonance-in-ceiling-tensioned-screen-a",
+      "brand": "Sonance",
+      "model": "In Ceiling Tensioned Screen (A)",
+      "category": "Projection Screens",
+      "subcategory": "Screen",
+      "description": "In ceiling tensioned, 16K Ready, HDR+ optimised",
+      "manufacturer": "Stewart / Elite",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide96.png",
+        "slides/sonance/Slide97.png"
+      ]
+    },
+    {
+      "id": "wisdom-in-ceiling-tensioned-screen-a",
+      "brand": "Wisdom",
+      "model": "In Ceiling Tensioned Screen (A)",
+      "category": "Projection Screens",
+      "subcategory": "Screen",
+      "description": "In ceiling tensioned, 16K Ready, HDR+ optimised",
+      "manufacturer": "Stewart / Elite",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide87.png",
+        "slides/wisdom/Slide88.png"
+      ]
+    },
+    {
+      "id": "mk-in-ceiling-tensioned-screen-b",
+      "brand": "M&K",
+      "model": "In Ceiling Tensioned Screen (B)",
+      "category": "Projection Screens",
+      "subcategory": "Screen",
+      "description": "In ceiling tensioned, 16K Ready, HDR+ optimised",
+      "manufacturer": "Stewart / Elite",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide103.png",
+        "slides/mk/Slide104.png"
+      ]
+    },
+    {
+      "id": "sonance-in-ceiling-tensioned-screen-b",
+      "brand": "Sonance",
+      "model": "In Ceiling Tensioned Screen (B)",
+      "category": "Projection Screens",
+      "subcategory": "Screen",
+      "description": "In ceiling tensioned, 16K Ready, HDR+ optimised",
+      "manufacturer": "Stewart / Elite",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide98.png",
+        "slides/sonance/Slide99.png"
+      ]
+    },
+    {
+      "id": "wisdom-in-ceiling-tensioned-screen-b",
+      "brand": "Wisdom",
+      "model": "In Ceiling Tensioned Screen (B)",
+      "category": "Projection Screens",
+      "subcategory": "Screen",
+      "description": "In ceiling tensioned, 16K Ready, HDR+ optimised",
+      "manufacturer": "Stewart / Elite",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide89.png",
+        "slides/wisdom/Slide90.png"
+      ]
+    },
+    {
+      "id": "mk-surface-mount-tensioned-screen-a",
+      "brand": "M&K",
+      "model": "Surface Mount Tensioned Screen (A)",
+      "category": "Projection Screens",
+      "subcategory": "Screen",
+      "description": "Surface mount tensioned, 16K Ready, HDR+ optimised",
+      "manufacturer": "Stewart / Elite",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide105.png",
+        "slides/mk/Slide106.png"
+      ]
+    },
+    {
+      "id": "sonance-surface-mount-tensioned-screen-a",
+      "brand": "Sonance",
+      "model": "Surface Mount Tensioned Screen (A)",
+      "category": "Projection Screens",
+      "subcategory": "Screen",
+      "description": "Surface mount tensioned, 16K Ready, HDR+ optimised",
+      "manufacturer": "Stewart / Elite",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide100.png",
+        "slides/sonance/Slide101.png"
+      ]
+    },
+    {
+      "id": "wisdom-surface-mount-tensioned-screen-a",
+      "brand": "Wisdom",
+      "model": "Surface Mount Tensioned Screen (A)",
+      "category": "Projection Screens",
+      "subcategory": "Screen",
+      "description": "Surface mount tensioned, 16K Ready, HDR+ optimised",
+      "manufacturer": "Stewart / Elite",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide91.png",
+        "slides/wisdom/Slide92.png"
+      ]
+    },
+    {
+      "id": "mk-surface-mount-tensioned-screen-b",
+      "brand": "M&K",
+      "model": "Surface Mount Tensioned Screen (B)",
+      "category": "Projection Screens",
+      "subcategory": "Screen",
+      "description": "Surface mount tensioned, 16K Ready, HDR+ optimised",
+      "manufacturer": "Stewart / Elite",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide107.png",
+        "slides/mk/Slide108.png"
+      ]
+    },
+    {
+      "id": "sonance-surface-mount-tensioned-screen-b",
+      "brand": "Sonance",
+      "model": "Surface Mount Tensioned Screen (B)",
+      "category": "Projection Screens",
+      "subcategory": "Screen",
+      "description": "Surface mount tensioned, 16K Ready, HDR+ optimised",
+      "manufacturer": "Stewart / Elite",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide102.png",
+        "slides/sonance/Slide103.png"
+      ]
+    },
+    {
+      "id": "wisdom-surface-mount-tensioned-screen-b",
+      "brand": "Wisdom",
+      "model": "Surface Mount Tensioned Screen (B)",
+      "category": "Projection Screens",
+      "subcategory": "Screen",
+      "description": "Surface mount tensioned, 16K Ready, HDR+ optimised",
+      "manufacturer": "Stewart / Elite",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide93.png",
+        "slides/wisdom/Slide94.png"
+      ]
+    },
+    {
+      "id": "mk-fixed-frame-screen-stewart",
+      "brand": "M&K",
+      "model": "Fixed Frame Screen (Stewart)",
+      "category": "Projection Screens",
+      "subcategory": "Screen",
+      "description": "Supreme or Classic Range, E-Grip fabric attachment, Stewart",
+      "manufacturer": "Stewart / Elite",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide109.png"
+      ]
+    },
+    {
+      "id": "sonance-fixed-frame-screen-stewart",
+      "brand": "Sonance",
+      "model": "Fixed Frame Screen (Stewart)",
+      "category": "Projection Screens",
+      "subcategory": "Screen",
+      "description": "Supreme or Classic Range, E-Grip fabric attachment, Stewart",
+      "manufacturer": "Stewart / Elite",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide104.png"
+      ]
+    },
+    {
+      "id": "wisdom-fixed-frame-screen-stewart",
+      "brand": "Wisdom",
+      "model": "Fixed Frame Screen (Stewart)",
+      "category": "Projection Screens",
+      "subcategory": "Screen",
+      "description": "Supreme or Classic Range, E-Grip fabric attachment, Stewart",
+      "manufacturer": "Stewart / Elite",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide95.png"
+      ]
+    },
+    {
+      "id": "mk-supreme-e-mask-screen",
+      "brand": "M&K",
+      "model": "Supreme E-Mask Screen",
+      "category": "Projection Screens",
+      "subcategory": "Screen",
+      "description": "ClearPix 2 Acoustic Fabric, 4K Ultra HD, reference colour accuracy",
+      "manufacturer": "Stewart / Elite",
+      "status": "active",
+      "slides": [
+        "slides/mk/Slide110.png"
+      ]
+    },
+    {
+      "id": "sonance-supreme-e-mask-screen",
+      "brand": "Sonance",
+      "model": "Supreme E-Mask Screen",
+      "category": "Projection Screens",
+      "subcategory": "Screen",
+      "description": "ClearPix 2 Acoustic Fabric, 4K Ultra HD, reference colour accuracy",
+      "manufacturer": "Stewart / Elite",
+      "status": "active",
+      "slides": [
+        "slides/sonance/Slide105.png"
+      ]
+    },
+    {
+      "id": "wisdom-supreme-e-mask-screen",
+      "brand": "Wisdom",
+      "model": "Supreme E-Mask Screen",
+      "category": "Projection Screens",
+      "subcategory": "Screen",
+      "description": "ClearPix 2 Acoustic Fabric, 4K Ultra HD, reference colour accuracy",
+      "manufacturer": "Stewart / Elite",
+      "status": "active",
+      "slides": [
+        "slides/wisdom/Slide96.png"
+      ]
+    }
+  ]
+}
