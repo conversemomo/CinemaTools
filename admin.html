@@ -325,8 +325,8 @@
   <span class="header-subtitle">Cinema Proposal Builder</span>
   <span class="header-admin-badge">Admin</span>
   <div class="spacer"></div>
-  <button class="header-btn" onclick="loadJSON()">📂 Load products.json</button>
-  <button class="header-btn save" onclick="saveJSON()">💾 Save &amp; Export JSON</button>
+  <a href="index.html" class="header-btn" style="text-decoration:none;">← Back to Tool</a>
+  <button class="header-btn save" onclick="saveJSON()">💾 Save to Server</button>
 </header>
 
 <!-- TABS -->
@@ -383,43 +383,73 @@
   ══════════════════════════════════════════ -->
   <div id="tab-slides" style="display:none">
     <div class="card">
-      <div class="card-title">Import New Slides from PowerPoint Export</div>
+      <div class="card-title">Import New Slides from PowerPoint / Keynote Export</div>
       <p style="font-size:13px; color:var(--muted); margin-bottom:16px;">
-        Export your updated PPTX as PNG files in PowerPoint (<b>File → Export → PNG</b>), then drag them here.
-        Once imported, assign each slide to a product below.
+        Export your updated deck as PNG or JPG slides, then drag them here.
+        The server will <strong>automatically renumber</strong> them continuing from the highest existing slide
+        (e.g. if the folder already has Slide116.jpg, new slides become Slide117, Slide118…).
       </p>
 
-      <div class="form-cols" style="margin-bottom:16px;">
-        <div>
-          <label style="font-size:12px; font-weight:600; color:var(--muted); display:block; margin-bottom:5px;">BRAND</label>
-          <select class="filter-select" id="import-brand" style="width:100%">
-            <option value="mk">M&amp;K Sound</option>
-            <option value="sonance">Sonance</option>
-            <option value="wisdom">Wisdom Audio</option>
-          </select>
-        </div>
-        <div>
-          <label style="font-size:12px; font-weight:600; color:var(--muted); display:block; margin-bottom:5px;">SLIDES FOLDER PATH ON SERVER</label>
-          <input class="filter-input" id="import-folder" value="slides/mk/" style="width:100%" oninput="updateImportFolder()">
-        </div>
+      <!-- Brand selector -->
+      <div style="margin-bottom:16px; max-width:260px;">
+        <label style="font-size:12px; font-weight:600; color:var(--muted); display:block; margin-bottom:5px; text-transform:uppercase; letter-spacing:0.4px;">Brand</label>
+        <select class="filter-select" id="import-brand" style="width:100%" onchange="onImportBrandChange()">
+          <option value="mk">M&amp;K Sound</option>
+          <option value="sonance">Sonance</option>
+          <option value="wisdom">Wisdom Audio</option>
+        </select>
       </div>
 
+      <!-- Folder info bar -->
+      <div id="folder-info" style="display:none; background:var(--soft-glacier); border-radius:4px; padding:10px 14px; font-size:13px; color:var(--muted); margin-bottom:14px;">
+        Scanning…
+      </div>
+
+      <!-- Drop zone -->
       <div class="upload-zone" id="upload-zone"
            ondragover="event.preventDefault(); this.classList.add('dragover')"
            ondragleave="this.classList.remove('dragover')"
            ondrop="handleFileDrop(event)"
            onclick="document.getElementById('file-input').click()">
         <input type="file" id="file-input" multiple accept="image/png,image/jpeg" onchange="handleFileSelect(event)">
-        <h3>Drop PNG files here or click to browse</h3>
-        <p>Select the Slide1.png, Slide2.png … files exported from PowerPoint</p>
+        <h3>Drop exported slide images here or click to browse</h3>
+        <p>Slide1.jpg, Slide2.jpg … (PNG also accepted) — they will be renumbered automatically</p>
       </div>
 
-      <div id="import-slide-grid" style="display:none">
-        <div style="display:flex; align-items:center; gap:10px; margin-top:16px; margin-bottom:8px;">
-          <b style="font-size:13px;" id="import-count"></b>
+      <!-- Renaming plan preview -->
+      <div id="rename-plan" style="display:none; margin-top:18px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px; flex-wrap:wrap;">
+          <b style="font-size:13px;" id="plan-title"></b>
           <button class="btn btn-ghost btn-sm" onclick="clearImport()">Clear</button>
-          <button class="btn btn-success btn-sm" id="bulk-assign-btn" style="margin-left:auto" onclick="bulkAutoAssign()">Auto-assign by slide number</button>
+          <button class="btn btn-primary btn-sm" id="confirm-upload-btn" style="margin-left:auto" onclick="confirmUpload()">
+            ✓ Upload &amp; Save to Server
+          </button>
         </div>
+
+        <!-- Conflict warning -->
+        <div id="conflict-warning" style="display:none; background:#fef2f2; border:1.5px solid #fca5a5; border-radius:6px; padding:12px 16px; margin-bottom:12px; font-size:13px; color:#b91c1c;">
+          <strong>⚠ Conflicts detected</strong> — the following filenames already exist on the server.
+          Please remove these slides from your export or clear and try again.
+          <ul id="conflict-list" style="margin:8px 0 0 16px; line-height:1.8;"></ul>
+        </div>
+
+        <!-- Plan table -->
+        <table style="width:100%; font-size:12px; border-collapse:collapse;">
+          <thead>
+            <tr>
+              <th style="text-align:left; padding:6px 10px; background:var(--soft-glacier); font-family:'Montserrat',sans-serif; font-size:10px; text-transform:uppercase; letter-spacing:0.6px; color:var(--signal-wave); border-bottom:2px solid var(--signal-wave);">Your file</th>
+              <th style="text-align:left; padding:6px 10px; background:var(--soft-glacier); font-family:'Montserrat',sans-serif; font-size:10px; text-transform:uppercase; letter-spacing:0.6px; color:var(--signal-wave); border-bottom:2px solid var(--signal-wave);">Will be saved as</th>
+              <th style="text-align:left; padding:6px 10px; background:var(--soft-glacier); font-family:'Montserrat',sans-serif; font-size:10px; text-transform:uppercase; letter-spacing:0.6px; color:var(--signal-wave); border-bottom:2px solid var(--signal-wave);">Status</th>
+            </tr>
+          </thead>
+          <tbody id="plan-tbody"></tbody>
+        </table>
+      </div>
+
+      <!-- Result grid (after successful upload) -->
+      <div id="import-slide-grid" style="display:none; margin-top:18px;">
+        <p style="font-size:13px; color:var(--success); font-weight:600; margin-bottom:10px;" id="upload-success-msg"></p>
+        <p style="font-size:12px; color:var(--muted); margin-bottom:12px;">Click any slide below to assign it to a product, or go to the <b>Products</b> tab and edit manually.</p>
         <div class="slide-grid" id="import-grid"></div>
       </div>
     </div>
@@ -441,8 +471,8 @@
       <div class="card-title">How to update this tool</div>
       <ol style="font-size:13px; color:var(--muted); line-height:2; padding-left:18px;">
         <li>Open your updated PPTX in PowerPoint</li>
-        <li>Go to <b>File → Export → PNG</b> — save slides to the matching brand folder on your server</li>
-        <li>Come back here → <b>Add Slides</b> tab → drag in the new PNG files</li>
+        <li>Go to <b>File → Export → PNG</b> — save slides to your Mac (PowerPoint exports as PNG, that's fine)</li>
+        <li>Come back here → <b>Add Slides</b> tab → drag in the exported slide files</li>
         <li>Assign slides to products (or add new products with <b>+ Add Product</b>)</li>
         <li>Click <b>Save &amp; Export JSON</b> → download the updated <code>products.json</code></li>
         <li>Upload the new <code>products.json</code> to your server's <code>data/</code> folder</li>
@@ -510,7 +540,7 @@
       <textarea id="edit-description" rows="2" placeholder="Short product description…"></textarea>
     </div>
     <div class="form-row">
-      <label>Slide File Paths <span style="font-weight:400; color:var(--muted);">(one per line, e.g. slides/mk/Slide8.png)</span></label>
+      <label>Slide File Paths <span style="font-weight:400; color:var(--muted);">(one per line, e.g. slides/mk/Slide8.jpg)</span></label>
       <div class="slide-path-list" id="slide-path-list"></div>
       <button class="btn btn-ghost btn-sm" style="margin-top:8px" onclick="addSlidePath()">+ Add slide path</button>
     </div>
@@ -544,7 +574,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 async function loadJSONAuto() {
   try {
-    const r = await fetch("data/products.json");
+    const r = await fetch("api/products.php");
     if (!r.ok) throw new Error("not found");
     DB = await r.json();
     renderTable();
@@ -565,6 +595,7 @@ function showTab(name) {
     btn.classList.toggle("active", ["products","slides","overview"][i] === name);
   });
   if (name === "overview") renderStats();
+  if (name === "slides") scanFolder();
 }
 
 // ─── FILTER / TABLE ───────────────────────────────────────────────────────────
@@ -639,7 +670,7 @@ function openAddModal() {
   document.getElementById("edit-description").value = "";
   document.getElementById("edit-status").value = "active";
   document.getElementById("delete-btn").style.display = "none";
-  renderSlidePathList(["slides/mk/Slide1.png"]);
+  renderSlidePathList(["slides/mk/Slide1.jpg"]);
   document.getElementById("edit-modal").classList.add("open");
 }
 
@@ -667,7 +698,7 @@ function renderSlidePathList(paths) {
   const el = document.getElementById("slide-path-list");
   el.innerHTML = paths.map((path, i) => `
     <div class="slide-path-item">
-      <input type="text" value="${path}" id="slide-path-${i}" placeholder="slides/brand/SlideN.png">
+      <input type="text" value="${path}" id="slide-path-${i}" placeholder="slides/brand/SlideN.jpg">
       <button class="btn btn-danger btn-sm" onclick="removeSlidePathRow(${i})">✕</button>
     </div>
   `).join("");
@@ -676,7 +707,7 @@ function renderSlidePathList(paths) {
 function addSlidePath() {
   const rows = document.querySelectorAll(".slide-path-item");
   const paths = Array.from(rows).map(r => r.querySelector("input").value);
-  paths.push("slides/mk/Slide1.png");
+  paths.push("slides/mk/Slide1.jpg");
   renderSlidePathList(paths);
 }
 
@@ -739,177 +770,237 @@ function slugify(brand, model) {
   return `${b}-${m}-${Date.now()}`;
 }
 
-// ─── IMPORT SLIDES ────────────────────────────────────────────────────────────
-document.getElementById("import-brand").addEventListener("change", updateImportFolder);
+// ─── IMPORT SLIDES — SERVER-SIDE FLOW ────────────────────────────────────────
+let pendingFiles   = [];   // raw File objects waiting to upload
+let uploadedSlides = [];   // saved slide objects returned from server
 
-function updateImportFolder() {
-  const brand = document.getElementById("import-brand").value;
-  document.getElementById("import-folder").value = `slides/${brand}/`;
+function brandLabel(val) {
+  return val === "mk" ? "M&K" : val === "sonance" ? "Sonance" : "Wisdom";
+}
+
+function naturalSort(a, b) {
+  return String(a).localeCompare(String(b), undefined, { numeric: true, sensitivity: "base" });
+}
+
+function extractSlideNum(name) {
+  const m = String(name).match(/(\d+)/);
+  return m ? parseInt(m[1]) : "?";
+}
+
+function findProductForSlide(relativePath) {
+  const prod = DB.products.find(p => (p.slides||[]).includes(relativePath));
+  return prod ? prod.model : null;
+}
+
+// Called when brand dropdown changes on the Add Slides tab
+async function onImportBrandChange() {
+  clearImport();
+  await scanFolder();
+}
+
+// Scan the server folder and update the info bar
+async function scanFolder() {
+  const brand   = document.getElementById("import-brand").value;
+  const infoBar = document.getElementById("folder-info");
+  infoBar.style.display = "block";
+  infoBar.textContent   = "Scanning slides/" + brand + "/ …";
+  try {
+    const r    = await fetch(`api/scan.php?brand=${brand}`);
+    const data = await r.json();
+    infoBar.innerHTML = `<strong>slides/${brand}/</strong> &nbsp;·&nbsp;
+      ${data.files.length} files currently on server &nbsp;·&nbsp;
+      Highest slide number: <strong>${data.highest || "none"}</strong> &nbsp;·&nbsp;
+      Next new slides will start at <strong>Slide${(data.highest||0)+1}.jpg</strong>`;
+  } catch(e) {
+    infoBar.textContent = "Could not scan folder — is the server running?";
+  }
 }
 
 function handleFileDrop(e) {
   e.preventDefault();
   document.getElementById("upload-zone").classList.remove("dragover");
   const files = Array.from(e.dataTransfer.files).filter(f => f.type.startsWith("image/"));
-  processImportFiles(files);
+  prepareUpload(files);
 }
 
 function handleFileSelect(e) {
   const files = Array.from(e.target.files).filter(f => f.type.startsWith("image/"));
-  processImportFiles(files);
+  prepareUpload(files);
 }
 
-function processImportFiles(files) {
+// Show renaming plan preview WITHOUT uploading yet
+async function prepareUpload(files) {
   if (!files.length) return;
-  importedFiles = [];
-  let loaded = 0;
-  const folder = document.getElementById("import-folder").value;
+  pendingFiles = [...files].sort((a,b) => naturalSort(a.name, b.name));
 
-  // Sort naturally (Slide1, Slide2 … Slide10, Slide11 …)
-  files.sort((a, b) => naturalSort(a.name, b.name));
+  const brand = document.getElementById("import-brand").value;
 
-  files.forEach(file => {
-    const reader = new FileReader();
-    reader.onload = (ev) => {
-      importedFiles.push({ name: file.name, path: folder + file.name, dataUrl: ev.target.result });
-      loaded++;
-      if (loaded === files.length) {
-        importedFiles.sort((a,b) => naturalSort(a.name, b.name));
-        renderImportGrid();
-      }
-    };
-    reader.readAsDataURL(file);
+  // Get current highest from server
+  let highest = 0;
+  try {
+    const r  = await fetch(`api/scan.php?brand=${brand}`);
+    const d  = await r.json();
+    highest  = d.highest || 0;
+  } catch(e) { /* server might not be running */ }
+
+  // Build plan locally for preview
+  const plan      = [];
+  const conflicts = [];
+  pendingFiles.forEach((file, i) => {
+    const newName = `Slide${highest + 1 + i}.jpg`;
+    plan.push({ originalName: file.name, newName, relativePath: `slides/${brand}/${newName}` });
+    // We'll let the server do the final conflict check, but show the plan
   });
+
+  renderRenamePlan(plan, conflicts);
 }
 
-function naturalSort(a, b) {
-  return a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" });
+function renderRenamePlan(plan, conflicts) {
+  document.getElementById("rename-plan").style.display = "block";
+  document.getElementById("import-slide-grid").style.display = "none";
+  document.getElementById("plan-title").textContent =
+    `${plan.length} slide${plan.length !== 1 ? "s" : ""} ready to upload — preview of renaming:`;
+
+  // Conflict warning
+  const warnEl = document.getElementById("conflict-warning");
+  const listEl = document.getElementById("conflict-list");
+  if (conflicts.length) {
+    listEl.innerHTML = conflicts.map(c => `<li>${c}</li>`).join("");
+    warnEl.style.display = "block";
+    document.getElementById("confirm-upload-btn").disabled = true;
+  } else {
+    warnEl.style.display = "none";
+    document.getElementById("confirm-upload-btn").disabled = false;
+  }
+
+  // Plan table
+  document.getElementById("plan-tbody").innerHTML = plan.map(row => `
+    <tr style="border-bottom:1px solid #f0f0f0;">
+      <td style="padding:6px 10px; color:var(--muted);">${row.originalName}</td>
+      <td style="padding:6px 10px; font-weight:600; color:var(--deep-midnight);">${row.newName}</td>
+      <td style="padding:6px 10px; font-size:11px; color:var(--muted);">${row.relativePath}</td>
+    </tr>
+  `).join("");
 }
 
-function renderImportGrid() {
+// User confirms — actually POST files to server
+async function confirmUpload() {
+  if (!pendingFiles.length) return;
+  const brand = document.getElementById("import-brand").value;
+  const btn   = document.getElementById("confirm-upload-btn");
+  btn.disabled = true;
+  btn.textContent = "Uploading…";
+
+  const formData = new FormData();
+  pendingFiles.forEach(f => formData.append("slides", f));
+
+  try {
+    const r    = await fetch(`api/upload.php?brand=${brand}`, { method: "POST", body: formData });
+    const data = await r.json();
+
+    if (!r.ok) {
+      // Conflict or server error
+      if (data.conflicts) {
+        renderRenamePlan(data.plan || [], data.conflicts);
+      } else {
+        toast("Upload failed: " + data.error, "error");
+      }
+      btn.disabled = false;
+      btn.textContent = "✓ Upload & Save to Server";
+      return;
+    }
+
+    // Success — show result grid
+    uploadedSlides = data.saved;
+    document.getElementById("rename-plan").style.display = "none";
+    document.getElementById("import-slide-grid").style.display = "block";
+    document.getElementById("upload-success-msg").textContent =
+      `✓ ${data.count} slide${data.count !== 1 ? "s" : ""} uploaded and saved to server (Slide${data.startedAt}–Slide${data.startedAt + data.count - 1}.jpg)`;
+
+    renderUploadedGrid();
+    await scanFolder();   // refresh the info bar
+    toast(`${data.count} slides uploaded successfully`, "success");
+
+  } catch(e) {
+    toast("Upload error — is the server running? " + e.message, "error");
+    btn.disabled = false;
+    btn.textContent = "✓ Upload & Save to Server";
+  }
+}
+
+function renderUploadedGrid() {
   const grid = document.getElementById("import-grid");
-  const area = document.getElementById("import-slide-grid");
-  document.getElementById("import-count").textContent = `${importedFiles.length} slides imported`;
-  area.style.display = "block";
-
-  grid.innerHTML = importedFiles.map((f, i) => {
-    const slideNum = extractSlideNum(f.name);
-    const mappedProd = findProductForSlide(f.path);
-    const isMapped = !!mappedProd;
-    return `<div class="slide-thumb-card ${isMapped ? "mapped" : ""}" id="import-card-${i}"
-                 onclick="assignSlideToProduct(${i})" title="${isMapped ? "Mapped to: "+mappedProd : "Click to assign to a product"}">
-      <img class="slide-thumb-img" src="${f.dataUrl}" alt="${f.name}">
+  grid.innerHTML = uploadedSlides.map((s, i) => {
+    const mapped = findProductForSlide(s.relativePath);
+    return `<div class="slide-thumb-card ${mapped ? "mapped" : ""}"
+                 onclick="assignUploadedSlide(${i})"
+                 title="${mapped ? "Mapped to: "+mapped : "Click to assign to a product"}">
+      <img class="slide-thumb-img" src="${s.relativePath}" alt="${s.newName}"
+           onerror="this.style.background='#e5e7eb'">
       <div class="slide-thumb-info">
-        <div class="slide-thumb-num">Slide ${slideNum}</div>
-        <div class="slide-thumb-label">${f.name}</div>
-        ${isMapped ? `<div class="mapped-badge">✓ ${mappedProd}</div>` : '<div style="font-size:10px;color:var(--muted)">Not assigned</div>'}
+        <div class="slide-thumb-num">${s.newName}</div>
+        <div class="slide-thumb-label">${s.originalName} → ${s.newName}</div>
+        ${mapped
+          ? `<div class="mapped-badge">✓ ${mapped}</div>`
+          : `<div style="font-size:10px;color:var(--muted)">Click to assign</div>`}
       </div>
     </div>`;
   }).join("");
 }
 
-function extractSlideNum(name) {
-  const m = name.match(/(\d+)/);
-  return m ? parseInt(m[1]) : "?";
-}
+function assignUploadedSlide(idx) {
+  const slide      = uploadedSlides[idx];
+  const brand      = document.getElementById("import-brand").value;
+  const label      = brandLabel(brand);
+  const prods      = DB.products.filter(p => p.brand === label);
+  const modelList  = prods.map(p => p.model).join("\n");
 
-function findProductForSlide(path) {
-  const prod = DB.products.find(p => (p.slides||[]).includes(path));
-  return prod ? prod.model : null;
-}
-
-function assignSlideToProduct(fileIdx) {
-  const file  = importedFiles[fileIdx];
-  const brand = document.getElementById("import-brand").options[
-    document.getElementById("import-brand").selectedIndex].text;
-  const brandVal = document.getElementById("import-brand").value;
-  const brandLabel = brandVal === "mk" ? "M&K" : brandVal === "sonance" ? "Sonance" : "Wisdom";
-
-  const prods = DB.products.filter(p => p.brand === brandLabel);
-  const options = prods.map(p => p.model).join("\n");
-  const choice  = prompt(`Assign "${file.name}" to which product?\n\nType the exact model name:\n\n${options.slice(0,500)}${options.length>500?"…":""}`);
+  const choice = prompt(
+    `Assign "${slide.newName}" to which product?\n\nType the exact model name:\n\n` +
+    modelList.slice(0, 600) + (modelList.length > 600 ? "\n…" : "")
+  );
   if (!choice) return;
 
   const prod = prods.find(p => p.model.toLowerCase() === choice.toLowerCase());
-  if (!prod) {
-    alert(`Product "${choice}" not found. Check the exact model name.`);
-    return;
-  }
-  if (!prod.slides.includes(file.path)) {
-    prod.slides.push(file.path);
-  }
-  renderImportGrid();
+  if (!prod) { alert(`Product "${choice}" not found.`); return; }
+  if (!prod.slides.includes(slide.relativePath)) prod.slides.push(slide.relativePath);
+
+  renderUploadedGrid();
   renderTable();
-  toast(`"${file.name}" assigned to ${prod.model}`, "success");
-}
-
-function bulkAutoAssign() {
-  const brandVal = document.getElementById("import-brand").value;
-  const brandLabel = brandVal === "mk" ? "M&K" : brandVal === "sonance" ? "Sonance" : "Wisdom";
-  const folder    = document.getElementById("import-folder").value;
-
-  let count = 0;
-  importedFiles.forEach(f => {
-    // Update the path in DB products that already reference this slide
-    const existingPath = f.path;
-    DB.products.forEach(p => {
-      if (p.brand === brandLabel) {
-        p.slides = p.slides.map(s => {
-          // Match by slide filename regardless of folder prefix
-          if (s.split("/").pop() === f.name) { count++; return existingPath; }
-          return s;
-        });
-      }
-    });
-  });
-
-  renderImportGrid();
-  renderTable();
-  toast(`Updated ${count} slide path(s)`, "success");
+  toast(`${slide.newName} assigned to ${prod.model}`, "success");
 }
 
 function clearImport() {
-  importedFiles = [];
+  pendingFiles   = [];
+  uploadedSlides = [];
+  document.getElementById("rename-plan").style.display       = "none";
   document.getElementById("import-slide-grid").style.display = "none";
   document.getElementById("file-input").value = "";
+  const btn = document.getElementById("confirm-upload-btn");
+  if (btn) { btn.disabled = false; btn.textContent = "✓ Upload & Save to Server"; }
 }
 
-// ─── SAVE / LOAD JSON ─────────────────────────────────────────────────────────
-function saveJSON() {
+// ─── SAVE JSON — POST to server ───────────────────────────────────────────────
+async function saveJSON() {
   DB.lastUpdated = new Date().toISOString().slice(0,10);
-  const json = JSON.stringify(DB, null, 2);
-  const blob = new Blob([json], { type: "application/json" });
-  const url  = URL.createObjectURL(blob);
-  const a    = document.createElement("a");
-  a.href     = url;
-  a.download = "products.json";
-  a.click();
-  URL.revokeObjectURL(url);
-  toast("products.json downloaded — upload it to your server's data/ folder", "success");
-}
-
-function loadJSON() {
-  const input = document.createElement("input");
-  input.type  = "file";
-  input.accept = ".json";
-  input.onchange = (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (ev) => {
-      try {
-        DB = JSON.parse(ev.target.result);
-        renderTable();
-        renderStats();
-        populateCatFilter();
-        toast("products.json loaded successfully", "success");
-      } catch(err) {
-        toast("Invalid JSON file", "error");
-      }
-    };
-    reader.readAsText(file);
-  };
-  input.click();
+  try {
+    const r = await fetch("api/products.php", {
+      method:  "POST",
+      headers: { "Content-Type": "application/json" },
+      body:    JSON.stringify(DB, null, 2)
+    });
+    if (!r.ok) throw new Error((await r.json()).error || r.statusText);
+    toast("✓ Saved to server — products.json updated", "success");
+  } catch(e) {
+    // Fallback: download file if server not reachable
+    const json = JSON.stringify(DB, null, 2);
+    const blob = new Blob([json], { type: "application/json" });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement("a");
+    a.href = url; a.download = "products.json"; a.click();
+    URL.revokeObjectURL(url);
+    toast("Server unreachable — file downloaded instead", "error");
+  }
 }
 
 // ─── OVERVIEW / STATS ────────────────────────────────────────────────────────
