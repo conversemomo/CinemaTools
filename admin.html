@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cinema Tool — Admin | Habitech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Karla:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-midnight:  #231F20;
+    --signal-wave:    #428CAF;
+    --data-stream:    #78B6E4;
+    --soft-glacier:   #E4ECED;
+    --pale-blue:      #BADAF3;
+    --sidebar-dark:   #3A4C60;
+    --mid-blue-grey:  #445868;
+
+    --accent:   var(--signal-wave);
+    --bg:       #f0f2f4;
+    --card:     #ffffff;
+    --border:   #CCCCCC;
+    --text:     var(--deep-midnight);
+    --muted:    var(--mid-blue-grey);
+    --danger:   #ef4444;
+    --success:  #16a34a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Karla', Calibri, Arial, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--deep-midnight);
+    color: #fff;
+    padding: 0 28px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 3px solid var(--signal-wave);
+  }
+  .header-logo { height: 28px; width: auto; display: block; }
+  .header-divider { width: 1px; height: 28px; background: rgba(255,255,255,0.2); }
+  .header-subtitle { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.6); letter-spacing: 1.5px; text-transform: uppercase; }
+  .header-admin-badge {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 3px;
+    background: rgba(66,140,175,0.25);
+    border: 1px solid rgba(66,140,175,0.4);
+    color: var(--data-stream);
+  }
+  header .spacer { flex: 1; }
+  .header-btn {
+    padding: 7px 16px;
+    border-radius: 3px;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    background: transparent;
+    color: rgba(255,255,255,0.75);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .header-btn:hover { border-color: var(--signal-wave); color: #fff; }
+  .header-btn.save { background: var(--signal-wave); border-color: var(--signal-wave); color: #fff; font-weight: 700; }
+  .header-btn.save:hover { background: #3a7d9e; }
+
+  /* ── NAV TABS ── */
+  .nav-tabs {
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    padding: 0 28px;
+    display: flex;
+    gap: 0;
+  }
+  .nav-tab {
+    padding: 14px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.15s;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+  .nav-tab:hover { color: var(--signal-wave); }
+  .nav-tab.active { color: var(--signal-wave); border-bottom-color: var(--signal-wave); }
+
+  /* ── MAIN ── */
+  main { max-width: 1200px; margin: 0 auto; padding: 28px; }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--card);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    padding: 22px 24px;
+    margin-bottom: 20px;
+  }
+  .card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--deep-midnight);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: #e5e7eb;
+    color: var(--muted);
+  }
+  .badge.mk      { background: #dbeafe; color: #1e40af; }
+  .badge.sonance { background: #dcfce7; color: #166534; }
+  .badge.wisdom  { background: #ede9fe; color: #4c1d95; }
+
+  /* ── BUTTONS ── */
+  .btn {
+    padding: 8px 16px;
+    border-radius: 3px;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .btn-primary  { background: var(--signal-wave); color: #fff; }
+  .btn-primary:hover { background: #3a7d9e; }
+  .btn-danger   { background: #fee2e2; color: var(--danger); }
+  .btn-danger:hover { background: #fecaca; }
+  .btn-ghost    { background: transparent; color: var(--muted); border: 1.5px solid var(--border); }
+  .btn-ghost:hover { background: var(--soft-glacier); }
+  .btn-success  { background: #dcfce7; color: var(--success); }
+  .btn-success:hover { background: #bbf7d0; }
+  .btn-sm { padding: 4px 10px; font-size: 10px; }
+
+  /* ── UPLOAD ZONE ── */
+  .upload-zone {
+    border: 2px dashed var(--border);
+    border-radius: 4px;
+    padding: 32px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: var(--soft-glacier);
+  }
+  .upload-zone:hover, .upload-zone.dragover { border-color: var(--signal-wave); background: var(--pale-blue); }
+  .upload-zone h3 { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--deep-midnight); }
+  .upload-zone p  { font-size: 13px; color: var(--muted); }
+  .upload-zone input { display: none; }
+
+  /* ── SLIDE GRID (import view) ── */
+  .slide-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; margin-top: 16px; }
+  .slide-thumb-card {
+    border-radius: 8px;
+    border: 2px solid var(--border);
+    overflow: hidden;
+    background: #f3f4f6;
+    cursor: pointer;
+    transition: border-color 0.15s;
+  }
+  .slide-thumb-card:hover { border-color: #93c5fd; }
+  .slide-thumb-card.mapped { border-color: var(--success); }
+  .slide-thumb-card.selected-for-product { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(201,168,76,0.3); }
+  .slide-thumb-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
+  .slide-thumb-info { padding: 5px 7px; }
+  .slide-thumb-num  { font-size: 11px; font-weight: 600; color: var(--muted); }
+  .slide-thumb-label{ font-size: 11px; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .mapped-badge { font-size: 10px; color: var(--success); font-weight: 600; }
+
+  /* ── PRODUCT TABLE ── */
+  .toolbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+  .filter-select, .filter-input {
+    padding: 7px 12px;
+    border: 1.5px solid var(--border);
+    border-radius: 3px;
+    font-size: 13px;
+    font-family: 'Karla', sans-serif;
+    background: var(--card);
+    outline: none;
+    color: var(--deep-midnight);
+  }
+  .filter-select:focus, .filter-input:focus { border-color: var(--signal-wave); box-shadow: 0 0 0 3px rgba(66,140,175,0.12); }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead th {
+    text-align: left;
+    padding: 8px 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--signal-wave);
+    border-bottom: 2px solid var(--signal-wave);
+    background: var(--soft-glacier);
+  }
+  tbody tr { border-bottom: 1px solid #f0f0f0; transition: background 0.1s; }
+  tbody tr:hover { background: #fafafa; }
+  td { padding: 8px 12px; vertical-align: middle; }
+  .td-thumb { width: 70px; }
+  .td-thumb img { width: 64px; height: 40px; object-fit: cover; border-radius: 4px; border: 1px solid var(--border); background: #e5e7eb; }
+  .td-model { font-weight: 600; }
+  .td-slides { display: flex; gap: 4px; flex-wrap: wrap; }
+  .slide-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 7px;
+    background: #f3f4f6;
+    border-radius: 10px;
+    font-size: 11px;
+    border: 1px solid var(--border);
+  }
+  .slide-chip button { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 12px; line-height: 1; padding: 0 1px; }
+  .slide-chip button:hover { color: var(--danger); }
+  .status-active   { color: var(--success); font-weight: 600; font-size: 12px; }
+  .status-inactive { color: var(--danger);  font-weight: 600; font-size: 12px; }
+
+  /* ── EDIT MODAL ── */
+  .modal-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--card);
+    border-radius: 12px;
+    width: 600px;
+    max-width: 95vw;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 28px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  }
+  .modal h3 { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; margin-bottom: 20px; color: var(--deep-midnight); letter-spacing: 0.3px; }
+  .form-row { margin-bottom: 14px; }
+  .form-row label { display: block; font-size: 12px; font-weight: 600; color: var(--muted); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.4px; }
+  .form-row input, .form-row select, .form-row textarea {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1.5px solid var(--border);
+    border-radius: 3px;
+    font-size: 13px;
+    outline: none;
+    font-family: 'Karla', sans-serif;
+    color: var(--deep-midnight);
+  }
+  .form-row input:focus, .form-row select:focus, .form-row textarea:focus { border-color: var(--signal-wave); box-shadow: 0 0 0 3px rgba(66,140,175,0.12); }
+  .form-row textarea { resize: vertical; min-height: 60px; }
+  .form-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .slide-path-list { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
+  .slide-path-item { display: flex; align-items: center; gap: 8px; }
+  .slide-path-item input { flex: 1; font-size: 12px; }
+  .modal-footer { display: flex; gap: 10px; margin-top: 22px; justify-content: flex-end; }
+
+  /* ── STATS ── */
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+  .stat-card { background: var(--bg); border-radius: 8px; padding: 14px 16px; }
+  .stat-val  { font-size: 26px; font-weight: 700; }
+  .stat-label{ font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  /* ── TOAST ── */
+  #toast {
+    position: fixed; bottom: 24px; right: 24px;
+    background: var(--deep-midnight); color: #fff;
+    padding: 12px 20px; border-radius: 8px;
+    font-size: 13px; font-weight: 500;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    transform: translateY(80px); opacity: 0;
+    transition: all 0.3s;
+    z-index: 9999;
+  }
+  #toast.show { transform: translateY(0); opacity: 1; }
+  #toast.success { border-left: 4px solid var(--success); }
+  #toast.error   { border-left: 4px solid var(--danger); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <img src="assets/habitech-logo-light.svg" alt="Habitech" class="header-logo">
+  <div class="header-divider"></div>
+  <span class="header-subtitle">Cinema Proposal Builder</span>
+  <span class="header-admin-badge">Admin</span>
+  <div class="spacer"></div>
+  <button class="header-btn" onclick="loadJSON()">📂 Load products.json</button>
+  <button class="header-btn save" onclick="saveJSON()">💾 Save &amp; Export JSON</button>
+</header>
+
+<!-- TABS -->
+<div class="nav-tabs">
+  <button class="nav-tab active" onclick="showTab('products')">Products</button>
+  <button class="nav-tab" onclick="showTab('slides')">Add Slides</button>
+  <button class="nav-tab" onclick="showTab('overview')">Overview</button>
+</div>
+
+<main>
+
+  <!-- ══════════════════════════════════════════
+       TAB: PRODUCTS
+  ══════════════════════════════════════════ -->
+  <div id="tab-products">
+    <div class="toolbar">
+      <select class="filter-select" id="filter-brand" onchange="renderTable()">
+        <option value="">All Brands</option>
+        <option>M&amp;K</option>
+        <option>Sonance</option>
+        <option>Wisdom</option>
+      </select>
+      <select class="filter-select" id="filter-cat" onchange="renderTable()">
+        <option value="">All Categories</option>
+      </select>
+      <input class="filter-input" id="filter-q" placeholder="Search model…" oninput="renderTable()" style="width:200px">
+      <div style="margin-left:auto; display:flex; gap:8px;">
+        <button class="btn btn-ghost" onclick="openAddModal()">+ Add Product</button>
+      </div>
+    </div>
+
+    <div class="card" style="padding:0; overflow:hidden;">
+      <table>
+        <thead>
+          <tr>
+            <th class="td-thumb">Slide</th>
+            <th>Model</th>
+            <th>Brand</th>
+            <th>Category</th>
+            <th>Subcategory</th>
+            <th>Slides</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="product-tbody"></tbody>
+      </table>
+    </div>
+    <div id="table-empty" style="display:none; text-align:center; color:var(--muted); padding:40px; font-size:14px;">No products match your filter</div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       TAB: ADD SLIDES
+  ══════════════════════════════════════════ -->
+  <div id="tab-slides" style="display:none">
+    <div class="card">
+      <div class="card-title">Import New Slides from PowerPoint Export</div>
+      <p style="font-size:13px; color:var(--muted); margin-bottom:16px;">
+        Export your updated PPTX as PNG files in PowerPoint (<b>File → Export → PNG</b>), then drag them here.
+        Once imported, assign each slide to a product below.
+      </p>
+
+      <div class="form-cols" style="margin-bottom:16px;">
+        <div>
+          <label style="font-size:12px; font-weight:600; color:var(--muted); display:block; margin-bottom:5px;">BRAND</label>
+          <select class="filter-select" id="import-brand" style="width:100%">
+            <option value="mk">M&amp;K Sound</option>
+            <option value="sonance">Sonance</option>
+            <option value="wisdom">Wisdom Audio</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-size:12px; font-weight:600; color:var(--muted); display:block; margin-bottom:5px;">SLIDES FOLDER PATH ON SERVER</label>
+          <input class="filter-input" id="import-folder" value="slides/mk/" style="width:100%" oninput="updateImportFolder()">
+        </div>
+      </div>
+
+      <div class="upload-zone" id="upload-zone"
+           ondragover="event.preventDefault(); this.classList.add('dragover')"
+           ondragleave="this.classList.remove('dragover')"
+           ondrop="handleFileDrop(event)"
+           onclick="document.getElementById('file-input').click()">
+        <input type="file" id="file-input" multiple accept="image/png,image/jpeg" onchange="handleFileSelect(event)">
+        <h3>Drop PNG files here or click to browse</h3>
+        <p>Select the Slide1.png, Slide2.png … files exported from PowerPoint</p>
+      </div>
+
+      <div id="import-slide-grid" style="display:none">
+        <div style="display:flex; align-items:center; gap:10px; margin-top:16px; margin-bottom:8px;">
+          <b style="font-size:13px;" id="import-count"></b>
+          <button class="btn btn-ghost btn-sm" onclick="clearImport()">Clear</button>
+          <button class="btn btn-success btn-sm" id="bulk-assign-btn" style="margin-left:auto" onclick="bulkAutoAssign()">Auto-assign by slide number</button>
+        </div>
+        <div class="slide-grid" id="import-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       TAB: OVERVIEW
+  ══════════════════════════════════════════ -->
+  <div id="tab-overview" style="display:none">
+    <div class="card">
+      <div class="card-title">Product Catalogue Summary</div>
+      <div class="stats-grid" id="stats-grid"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Brand Breakdown</div>
+      <div id="brand-overview"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">How to update this tool</div>
+      <ol style="font-size:13px; color:var(--muted); line-height:2; padding-left:18px;">
+        <li>Open your updated PPTX in PowerPoint</li>
+        <li>Go to <b>File → Export → PNG</b> — save slides to the matching brand folder on your server</li>
+        <li>Come back here → <b>Add Slides</b> tab → drag in the new PNG files</li>
+        <li>Assign slides to products (or add new products with <b>+ Add Product</b>)</li>
+        <li>Click <b>Save &amp; Export JSON</b> → download the updated <code>products.json</code></li>
+        <li>Upload the new <code>products.json</code> to your server's <code>data/</code> folder</li>
+        <li>The BDM tool (<code>index.html</code>) will immediately show the new products</li>
+      </ol>
+    </div>
+  </div>
+
+</main>
+
+<!-- ══════════════════════════════════════════
+     EDIT / ADD PRODUCT MODAL
+══════════════════════════════════════════ -->
+<div class="modal-overlay" id="edit-modal">
+  <div class="modal">
+    <h3 id="modal-title">Edit Product</h3>
+    <input type="hidden" id="edit-id">
+    <div class="form-cols">
+      <div class="form-row">
+        <label>Brand</label>
+        <select id="edit-brand">
+          <option>M&amp;K</option>
+          <option>Sonance</option>
+          <option>Wisdom</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Status</label>
+        <select id="edit-status">
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-cols">
+      <div class="form-row">
+        <label>Model Name</label>
+        <input type="text" id="edit-model" placeholder="e.g. NZ900">
+      </div>
+      <div class="form-row">
+        <label>Manufacturer</label>
+        <input type="text" id="edit-manufacturer" placeholder="e.g. JVC">
+      </div>
+    </div>
+    <div class="form-cols">
+      <div class="form-row">
+        <label>Category</label>
+        <select id="edit-category">
+          <option>Speakers</option>
+          <option>Subwoofers</option>
+          <option>Amplification</option>
+          <option>Video Processors</option>
+          <option>Projectors</option>
+          <option>TV</option>
+          <option>Projection Screens</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Subcategory</label>
+        <input type="text" id="edit-subcategory" placeholder="e.g. Front Speakers">
+      </div>
+    </div>
+    <div class="form-row">
+      <label>Description</label>
+      <textarea id="edit-description" rows="2" placeholder="Short product description…"></textarea>
+    </div>
+    <div class="form-row">
+      <label>Slide File Paths <span style="font-weight:400; color:var(--muted);">(one per line, e.g. slides/mk/Slide8.png)</span></label>
+      <div class="slide-path-list" id="slide-path-list"></div>
+      <button class="btn btn-ghost btn-sm" style="margin-top:8px" onclick="addSlidePath()">+ Add slide path</button>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-danger btn-sm" id="delete-btn" onclick="deleteProduct()">Delete</button>
+      <button class="btn btn-primary" onclick="saveProduct()">Save Product</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+// ─── STATE ────────────────────────────────────────────────────────────────────
+let DB = {
+  version: "1.0",
+  lastUpdated: new Date().toISOString().slice(0,10),
+  brands: ["M&K","Sonance","Wisdom"],
+  categories: ["Speakers","Subwoofers","Amplification","Video Processors","Projectors","TV","Projection Screens"],
+  structural: {},
+  products: []
+};
+let editingId    = null;
+let importedFiles = []; // [{name, path, dataUrl}]
+
+// ─── BOOT ─────────────────────────────────────────────────────────────────────
+window.addEventListener("DOMContentLoaded", () => {
+  loadJSONAuto();
+});
+
+async function loadJSONAuto() {
+  try {
+    const r = await fetch("data/products.json");
+    if (!r.ok) throw new Error("not found");
+    DB = await r.json();
+    renderTable();
+    renderStats();
+    populateCatFilter();
+    toast("products.json loaded", "success");
+  } catch(e) {
+    toast("No products.json found — start fresh or use Load button", "error");
+  }
+}
+
+// ─── TAB SWITCHING ────────────────────────────────────────────────────────────
+function showTab(name) {
+  ["products","slides","overview"].forEach(t => {
+    document.getElementById("tab-"+t).style.display = t === name ? "block" : "none";
+  });
+  document.querySelectorAll(".nav-tab").forEach((btn, i) => {
+    btn.classList.toggle("active", ["products","slides","overview"][i] === name);
+  });
+  if (name === "overview") renderStats();
+}
+
+// ─── FILTER / TABLE ───────────────────────────────────────────────────────────
+function populateCatFilter() {
+  const cats = ["", ...new Set(DB.products.map(p => p.category))];
+  document.getElementById("filter-cat").innerHTML = cats.map(c =>
+    `<option value="${c}">${c || "All Categories"}</option>`
+  ).join("");
+}
+
+function renderTable() {
+  const brand = document.getElementById("filter-brand").value;
+  const cat   = document.getElementById("filter-cat").value;
+  const q     = document.getElementById("filter-q").value.toLowerCase();
+
+  let prods = DB.products;
+  if (brand) prods = prods.filter(p => p.brand === brand);
+  if (cat)   prods = prods.filter(p => p.category === cat);
+  if (q)     prods = prods.filter(p =>
+    p.model.toLowerCase().includes(q) || (p.description||"").toLowerCase().includes(q)
+  );
+
+  const tbody = document.getElementById("product-tbody");
+  const empty = document.getElementById("table-empty");
+
+  if (!prods.length) {
+    tbody.innerHTML = "";
+    empty.style.display = "block";
+    return;
+  }
+  empty.style.display = "none";
+
+  tbody.innerHTML = prods.map(prod => {
+    const thumb = prod.slides?.[0] || "";
+    const brandCls = prod.brand === "M&K" ? "mk" : prod.brand === "Sonance" ? "sonance" : "wisdom";
+    const statusCls = prod.status === "active" ? "status-active" : "status-inactive";
+    const slideChips = (prod.slides||[]).map((s,i) => {
+      const filename = s.split("/").pop();
+      return `<span class="slide-chip">${filename}<button onclick="removeSlideFromProduct('${prod.id}',${i})" title="Remove slide">✕</button></span>`;
+    }).join("");
+    return `<tr>
+      <td class="td-thumb"><img src="${thumb}" alt="${prod.model}" onerror="this.style.visibility='hidden'"></td>
+      <td class="td-model">${prod.model}</td>
+      <td><span class="badge ${brandCls}">${prod.brand}</span></td>
+      <td>${prod.category}</td>
+      <td style="color:var(--muted);font-size:12px">${prod.subcategory||""}</td>
+      <td><div class="td-slides">${slideChips}</div></td>
+      <td><span class="${statusCls}">${prod.status || "active"}</span></td>
+      <td><button class="btn btn-ghost btn-sm" onclick="openEditModal('${prod.id}')">Edit</button></td>
+    </tr>`;
+  }).join("");
+}
+
+function removeSlideFromProduct(id, idx) {
+  const prod = DB.products.find(p => p.id === id);
+  if (!prod) return;
+  prod.slides.splice(idx, 1);
+  renderTable();
+  toast("Slide removed", "success");
+}
+
+// ─── ADD / EDIT MODAL ─────────────────────────────────────────────────────────
+function openAddModal() {
+  editingId = null;
+  document.getElementById("modal-title").textContent = "Add New Product";
+  document.getElementById("edit-id").value = "";
+  document.getElementById("edit-brand").value = "M&K";
+  document.getElementById("edit-model").value = "";
+  document.getElementById("edit-manufacturer").value = "";
+  document.getElementById("edit-category").value = "Speakers";
+  document.getElementById("edit-subcategory").value = "";
+  document.getElementById("edit-description").value = "";
+  document.getElementById("edit-status").value = "active";
+  document.getElementById("delete-btn").style.display = "none";
+  renderSlidePathList(["slides/mk/Slide1.png"]);
+  document.getElementById("edit-modal").classList.add("open");
+}
+
+function openEditModal(id) {
+  const prod = DB.products.find(p => p.id === id);
+  if (!prod) return;
+  editingId = id;
+  document.getElementById("modal-title").textContent = "Edit Product";
+  document.getElementById("edit-id").value = prod.id;
+  document.getElementById("edit-brand").value = prod.brand;
+  document.getElementById("edit-model").value = prod.model;
+  document.getElementById("edit-manufacturer").value = prod.manufacturer || "";
+  document.getElementById("edit-category").value = prod.category;
+  document.getElementById("edit-subcategory").value = prod.subcategory || "";
+  document.getElementById("edit-description").value = prod.description || "";
+  document.getElementById("edit-status").value = prod.status || "active";
+  document.getElementById("delete-btn").style.display = "inline-flex";
+  renderSlidePathList(prod.slides || []);
+  document.getElementById("edit-modal").classList.add("open");
+}
+
+function closeModal() { document.getElementById("edit-modal").classList.remove("open"); }
+
+function renderSlidePathList(paths) {
+  const el = document.getElementById("slide-path-list");
+  el.innerHTML = paths.map((path, i) => `
+    <div class="slide-path-item">
+      <input type="text" value="${path}" id="slide-path-${i}" placeholder="slides/brand/SlideN.png">
+      <button class="btn btn-danger btn-sm" onclick="removeSlidePathRow(${i})">✕</button>
+    </div>
+  `).join("");
+}
+
+function addSlidePath() {
+  const rows = document.querySelectorAll(".slide-path-item");
+  const paths = Array.from(rows).map(r => r.querySelector("input").value);
+  paths.push("slides/mk/Slide1.png");
+  renderSlidePathList(paths);
+}
+
+function removeSlidePathRow(i) {
+  const rows  = document.querySelectorAll(".slide-path-item");
+  const paths = Array.from(rows).map(r => r.querySelector("input").value);
+  paths.splice(i, 1);
+  renderSlidePathList(paths.length ? paths : [""]);
+}
+
+function getSlidePathsFromForm() {
+  return Array.from(document.querySelectorAll(".slide-path-item input"))
+    .map(i => i.value.trim()).filter(Boolean);
+}
+
+function saveProduct() {
+  const brand   = document.getElementById("edit-brand").value;
+  const model   = document.getElementById("edit-model").value.trim();
+  const slides  = getSlidePathsFromForm();
+  if (!model) { alert("Please enter a model name"); return; }
+
+  const newProd = {
+    id:           editingId || slugify(brand, model),
+    brand,
+    model,
+    manufacturer: document.getElementById("edit-manufacturer").value.trim(),
+    category:     document.getElementById("edit-category").value,
+    subcategory:  document.getElementById("edit-subcategory").value.trim(),
+    description:  document.getElementById("edit-description").value.trim(),
+    status:       document.getElementById("edit-status").value,
+    slides
+  };
+
+  if (editingId) {
+    const idx = DB.products.findIndex(p => p.id === editingId);
+    if (idx >= 0) DB.products[idx] = newProd;
+  } else {
+    DB.products.push(newProd);
+  }
+
+  DB.lastUpdated = new Date().toISOString().slice(0,10);
+  closeModal();
+  renderTable();
+  populateCatFilter();
+  toast(editingId ? "Product updated" : "Product added", "success");
+}
+
+function deleteProduct() {
+  if (!editingId) return;
+  if (!confirm("Delete this product? This cannot be undone.")) return;
+  DB.products = DB.products.filter(p => p.id !== editingId);
+  closeModal();
+  renderTable();
+  toast("Product deleted", "success");
+}
+
+function slugify(brand, model) {
+  const b = brand.toLowerCase().replace(/[^a-z0-9]/g,"-").replace(/-+/g,"-");
+  const m = model.toLowerCase().replace(/[^a-z0-9]/g,"-").replace(/-+/g,"-");
+  return `${b}-${m}-${Date.now()}`;
+}
+
+// ─── IMPORT SLIDES ────────────────────────────────────────────────────────────
+document.getElementById("import-brand").addEventListener("change", updateImportFolder);
+
+function updateImportFolder() {
+  const brand = document.getElementById("import-brand").value;
+  document.getElementById("import-folder").value = `slides/${brand}/`;
+}
+
+function handleFileDrop(e) {
+  e.preventDefault();
+  document.getElementById("upload-zone").classList.remove("dragover");
+  const files = Array.from(e.dataTransfer.files).filter(f => f.type.startsWith("image/"));
+  processImportFiles(files);
+}
+
+function handleFileSelect(e) {
+  const files = Array.from(e.target.files).filter(f => f.type.startsWith("image/"));
+  processImportFiles(files);
+}
+
+function processImportFiles(files) {
+  if (!files.length) return;
+  importedFiles = [];
+  let loaded = 0;
+  const folder = document.getElementById("import-folder").value;
+
+  // Sort naturally (Slide1, Slide2 … Slide10, Slide11 …)
+  files.sort((a, b) => naturalSort(a.name, b.name));
+
+  files.forEach(file => {
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      importedFiles.push({ name: file.name, path: folder + file.name, dataUrl: ev.target.result });
+      loaded++;
+      if (loaded === files.length) {
+        importedFiles.sort((a,b) => naturalSort(a.name, b.name));
+        renderImportGrid();
+      }
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+function naturalSort(a, b) {
+  return a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" });
+}
+
+function renderImportGrid() {
+  const grid = document.getElementById("import-grid");
+  const area = document.getElementById("import-slide-grid");
+  document.getElementById("import-count").textContent = `${importedFiles.length} slides imported`;
+  area.style.display = "block";
+
+  grid.innerHTML = importedFiles.map((f, i) => {
+    const slideNum = extractSlideNum(f.name);
+    const mappedProd = findProductForSlide(f.path);
+    const isMapped = !!mappedProd;
+    return `<div class="slide-thumb-card ${isMapped ? "mapped" : ""}" id="import-card-${i}"
+                 onclick="assignSlideToProduct(${i})" title="${isMapped ? "Mapped to: "+mappedProd : "Click to assign to a product"}">
+      <img class="slide-thumb-img" src="${f.dataUrl}" alt="${f.name}">
+      <div class="slide-thumb-info">
+        <div class="slide-thumb-num">Slide ${slideNum}</div>
+        <div class="slide-thumb-label">${f.name}</div>
+        ${isMapped ? `<div class="mapped-badge">✓ ${mappedProd}</div>` : '<div style="font-size:10px;color:var(--muted)">Not assigned</div>'}
+      </div>
+    </div>`;
+  }).join("");
+}
+
+function extractSlideNum(name) {
+  const m = name.match(/(\d+)/);
+  return m ? parseInt(m[1]) : "?";
+}
+
+function findProductForSlide(path) {
+  const prod = DB.products.find(p => (p.slides||[]).includes(path));
+  return prod ? prod.model : null;
+}
+
+function assignSlideToProduct(fileIdx) {
+  const file  = importedFiles[fileIdx];
+  const brand = document.getElementById("import-brand").options[
+    document.getElementById("import-brand").selectedIndex].text;
+  const brandVal = document.getElementById("import-brand").value;
+  const brandLabel = brandVal === "mk" ? "M&K" : brandVal === "sonance" ? "Sonance" : "Wisdom";
+
+  const prods = DB.products.filter(p => p.brand === brandLabel);
+  const options = prods.map(p => p.model).join("\n");
+  const choice  = prompt(`Assign "${file.name}" to which product?\n\nType the exact model name:\n\n${options.slice(0,500)}${options.length>500?"…":""}`);
+  if (!choice) return;
+
+  const prod = prods.find(p => p.model.toLowerCase() === choice.toLowerCase());
+  if (!prod) {
+    alert(`Product "${choice}" not found. Check the exact model name.`);
+    return;
+  }
+  if (!prod.slides.includes(file.path)) {
+    prod.slides.push(file.path);
+  }
+  renderImportGrid();
+  renderTable();
+  toast(`"${file.name}" assigned to ${prod.model}`, "success");
+}
+
+function bulkAutoAssign() {
+  const brandVal = document.getElementById("import-brand").value;
+  const brandLabel = brandVal === "mk" ? "M&K" : brandVal === "sonance" ? "Sonance" : "Wisdom";
+  const folder    = document.getElementById("import-folder").value;
+
+  let count = 0;
+  importedFiles.forEach(f => {
+    // Update the path in DB products that already reference this slide
+    const existingPath = f.path;
+    DB.products.forEach(p => {
+      if (p.brand === brandLabel) {
+        p.slides = p.slides.map(s => {
+          // Match by slide filename regardless of folder prefix
+          if (s.split("/").pop() === f.name) { count++; return existingPath; }
+          return s;
+        });
+      }
+    });
+  });
+
+  renderImportGrid();
+  renderTable();
+  toast(`Updated ${count} slide path(s)`, "success");
+}
+
+function clearImport() {
+  importedFiles = [];
+  document.getElementById("import-slide-grid").style.display = "none";
+  document.getElementById("file-input").value = "";
+}
+
+// ─── SAVE / LOAD JSON ─────────────────────────────────────────────────────────
+function saveJSON() {
+  DB.lastUpdated = new Date().toISOString().slice(0,10);
+  const json = JSON.stringify(DB, null, 2);
+  const blob = new Blob([json], { type: "application/json" });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement("a");
+  a.href     = url;
+  a.download = "products.json";
+  a.click();
+  URL.revokeObjectURL(url);
+  toast("products.json downloaded — upload it to your server's data/ folder", "success");
+}
+
+function loadJSON() {
+  const input = document.createElement("input");
+  input.type  = "file";
+  input.accept = ".json";
+  input.onchange = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      try {
+        DB = JSON.parse(ev.target.result);
+        renderTable();
+        renderStats();
+        populateCatFilter();
+        toast("products.json loaded successfully", "success");
+      } catch(err) {
+        toast("Invalid JSON file", "error");
+      }
+    };
+    reader.readAsText(file);
+  };
+  input.click();
+}
+
+// ─── OVERVIEW / STATS ────────────────────────────────────────────────────────
+function renderStats() {
+  const total = DB.products.length;
+  const active = DB.products.filter(p => p.status !== "inactive").length;
+  const cats   = new Set(DB.products.map(p => p.category)).size;
+  const slides = DB.products.reduce((n, p) => n + (p.slides||[]).length, 0);
+
+  document.getElementById("stats-grid").innerHTML = [
+    { val: total,  label: "Total Products" },
+    { val: active, label: "Active Products" },
+    { val: cats,   label: "Categories" },
+    { val: slides, label: "Total Slides Mapped" },
+    { val: DB.lastUpdated || "—", label: "Last Updated" },
+  ].map(s => `<div class="stat-card"><div class="stat-val">${s.val}</div><div class="stat-label">${s.label}</div></div>`).join("");
+
+  const byBrand = {};
+  DB.products.forEach(p => {
+    byBrand[p.brand] = byBrand[p.brand] || {};
+    byBrand[p.brand][p.category] = (byBrand[p.brand][p.category] || 0) + 1;
+  });
+
+  document.getElementById("brand-overview").innerHTML = Object.entries(byBrand).map(([brand, cats]) => {
+    const brandCls = brand === "M&K" ? "mk" : brand === "Sonance" ? "sonance" : "wisdom";
+    const rows = Object.entries(cats).map(([c,n]) => `<tr><td style="padding:4px 12px;color:var(--muted);font-size:13px">${c}</td><td style="padding:4px 12px;font-weight:600;font-size:13px">${n}</td></tr>`).join("");
+    return `<div style="margin-bottom:16px">
+      <div style="margin-bottom:6px"><span class="badge ${brandCls}">${brand}</span></div>
+      <table style="font-size:13px">${rows}</table>
+    </div>`;
+  }).join("");
+}
+
+// ─── TOAST ────────────────────────────────────────────────────────────────────
+let toastTimer;
+function toast(msg, type = "success") {
+  const el = document.getElementById("toast");
+  el.textContent = msg;
+  el.className = "show " + type;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { el.className = ""; }, 3000);
+}
+
+// Close modal on overlay click
+document.getElementById("edit-modal").addEventListener("click", function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>
