@@ -292,6 +292,10 @@
   .slide-path-list { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
   .slide-path-item { display: flex; align-items: center; gap: 8px; }
   .slide-path-item input { flex: 1; font-size: 12px; }
+  #spec-row-list { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
+  .spec-row { display: grid; grid-template-columns: 1fr 1.5fr auto; gap: 8px; align-items: center; }
+  .spec-row input { font-size: 12px; }
+  .spec-row input::placeholder { color: #aaa; }
   .modal-footer { display: flex; gap: 10px; margin-top: 22px; justify-content: flex-end; }
 
   /* ── STATS ── */
@@ -540,6 +544,15 @@
       <textarea id="edit-description" rows="2" placeholder="Short product description…"></textarea>
     </div>
     <div class="form-row">
+      <label>Key Features <span style="font-weight:400; color:var(--muted);">(one bullet point per line)</span></label>
+      <textarea id="edit-features" rows="5" placeholder="THX Select certified for rooms up to 56.63m³&#10;2 x 5.25&quot; Woofers built with aluminium distortion killer rings&#10;Convenient bookshelf sized speakers"></textarea>
+    </div>
+    <div class="form-row">
+      <label>Specifications <span style="font-weight:400; color:var(--muted);">(e.g. Frequency Response, Impedance, Dimensions)</span></label>
+      <div id="spec-row-list"></div>
+      <button class="btn btn-ghost btn-sm" style="margin-top:8px" onclick="addSpecRow()">+ Add Specification</button>
+    </div>
+    <div class="form-row">
       <label>Slide File Paths <span style="font-weight:400; color:var(--muted);">(one per line, e.g. slides/mk/Slide8.jpg)</span></label>
       <div class="slide-path-list" id="slide-path-list"></div>
       <button class="btn btn-ghost btn-sm" style="margin-top:8px" onclick="addSlidePath()">+ Add slide path</button>
@@ -674,8 +687,10 @@ function openAddModal() {
   document.getElementById("edit-category").value = "Speakers";
   document.getElementById("edit-subcategory").value = "";
   document.getElementById("edit-description").value = "";
+  document.getElementById("edit-features").value = "";
   document.getElementById("edit-status").value = "active";
   document.getElementById("delete-btn").style.display = "none";
+  renderSpecRows({});
   renderSlidePathList(["slides/mk/Slide1.jpg"]);
   document.getElementById("edit-modal").classList.add("open");
 }
@@ -692,8 +707,10 @@ function openEditModal(id) {
   document.getElementById("edit-category").value = prod.category;
   document.getElementById("edit-subcategory").value = prod.subcategory || "";
   document.getElementById("edit-description").value = prod.description || "";
+  document.getElementById("edit-features").value = (prod.features || []).join("\n");
   document.getElementById("edit-status").value = prod.status || "active";
   document.getElementById("delete-btn").style.display = "inline-flex";
+  renderSpecRows(prod.specs || {});
   renderSlidePathList(prod.slides || []);
   document.getElementById("edit-modal").classList.add("open");
 }
@@ -729,6 +746,45 @@ function getSlidePathsFromForm() {
     .map(i => i.value.trim()).filter(Boolean);
 }
 
+// ─── SPEC ROWS ────────────────────────────────────────────────────────────────
+function renderSpecRows(specs) {
+  const el = document.getElementById("spec-row-list");
+  const entries = specs && typeof specs === "object" ? Object.entries(specs) : [];
+  el.innerHTML = entries.map(([k, v], i) => `
+    <div class="spec-row">
+      <input type="text" value="${k.replace(/"/g,'&quot;')}" id="spec-key-${i}" placeholder="e.g. Frequency Response">
+      <input type="text" value="${String(v).replace(/"/g,'&quot;')}" id="spec-val-${i}" placeholder="e.g. 80Hz to 20kHz">
+      <button class="btn btn-danger btn-sm" onclick="removeSpecRow(${i})">✕</button>
+    </div>
+  `).join("") || "";
+}
+
+function addSpecRow() {
+  const specs = getSpecsFromForm();
+  specs[""] = "";
+  renderSpecRows(specs);
+  // Focus the last key input
+  const keys = document.querySelectorAll("[id^='spec-key-']");
+  if (keys.length) keys[keys.length - 1].focus();
+}
+
+function removeSpecRow(i) {
+  const entries = Object.entries(getSpecsFromForm());
+  entries.splice(i, 1);
+  renderSpecRows(Object.fromEntries(entries));
+}
+
+function getSpecsFromForm() {
+  const keys = document.querySelectorAll("[id^='spec-key-']");
+  const vals = document.querySelectorAll("[id^='spec-val-']");
+  const specs = {};
+  keys.forEach((k, i) => {
+    const key = k.value.trim();
+    if (key) specs[key] = vals[i].value.trim();
+  });
+  return specs;
+}
+
 function saveProduct() {
   const brand   = document.getElementById("edit-brand").value;
   const model   = document.getElementById("edit-model").value.trim();
@@ -743,6 +799,8 @@ function saveProduct() {
     category:     document.getElementById("edit-category").value,
     subcategory:  document.getElementById("edit-subcategory").value.trim(),
     description:  document.getElementById("edit-description").value.trim(),
+    features:     document.getElementById("edit-features").value.split("\n").map(s=>s.trim()).filter(Boolean),
+    specs:        getSpecsFromForm(),
     status:       document.getElementById("edit-status").value,
     slides
   };
