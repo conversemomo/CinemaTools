@@ -573,17 +573,23 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 async function loadJSONAuto() {
-  try {
-    const r = await fetch("api/products.php");
-    if (!r.ok) throw new Error("not found");
-    DB = await r.json();
-    renderTable();
-    renderStats();
-    populateCatFilter();
-    toast("products.json loaded", "success");
-  } catch(e) {
-    toast("No products.json found — start fresh or use Load button", "error");
+  // Try PHP API first (live server), fall back to direct file (local preview)
+  const sources = ["api/products.php", "data/products.json"];
+  for (const src of sources) {
+    try {
+      const r = await fetch(src);
+      if (!r.ok) continue;
+      const json = await r.json();
+      if (!json || !json.products) continue;
+      DB = json;
+      renderTable();
+      renderStats();
+      populateCatFilter();
+      toast("products.json loaded", "success");
+      return;
+    } catch(e) { /* try next */ }
   }
+  toast("No products.json found — start fresh or use Load button", "error");
 }
 
 // ─── TAB SWITCHING ────────────────────────────────────────────────────────────
